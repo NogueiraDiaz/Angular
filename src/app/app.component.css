@@ -1,0 +1,13 @@
+:root{
+    --fondo: rgb(44, 44, 44);
+    --cards: rgb(144, 144, 144);
+    --libre: rgb(164, 255, 94);
+}
+
+.card-img-top {
+    height: 125px;
+    object-fit: cover; 
+}
+
+
+

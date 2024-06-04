@@ -1,0 +1,1523 @@
+{
+  "coches": [
+    {
+      "id": "1",
+      "marca": "caca",
+      "modelo": "caca",
+      "año": 2003,
+      "color": "Rojo",
+      "matricula": "3674ZFJ",
+      "precio_diario": 70,
+      "alquiler": {
+        "clienteNombre": "Isabel Martínez Martínez",
+        "fechaInicio": "2023-01-14"
+      },
+      "imagen": "pexels-mert-erol-15422102.jpg",
+      "nota": null,
+      "kilometraje": 62133,
+      "anio": "1234"
+    },
+    {
+      "id": "2",
+      "marca": "Renault",
+      "modelo": "Clio",
+      "año": 2008,
+      "color": "Verde",
+      "matricula": "8788WXP",
+      "precio_diario": 85,
+      "alquiler": {
+        "clienteNombre": "Isabel González Fernández",
+        "fechaInicio": "2024-02-03"
+      },
+      "imagen": "pexels-luca-istrate-15469368.jpg",
+      "nota": "Algunos rasguños",
+      "kilometraje": 60746
+    },
+    {
+      "id": "3",
+      "marca": "Seat",
+      "modelo": "Ibiza",
+      "año": 2019,
+      "color": "Negro",
+      "matricula": "9906LMZ",
+      "precio_diario": 52,
+      "alquiler": {
+        "clienteNombre": "Antonio González Martínez",
+        "fechaInicio": "2023-04-15"
+      },
+      "imagen": "pexels-liza-lova-2739286.jpg",
+      "nota": "Interior impecable",
+      "kilometraje": 37411
+    },
+    {
+      "id": "4",
+      "marca": "Citroën",
+      "modelo": "Berlingo",
+      "año": 2004,
+      "color": "Rojo",
+      "matricula": "8298FBL",
+      "precio_diario": 94,
+      "alquiler": {
+        "clienteNombre": "José Sánchez García",
+        "fechaInicio": "2023-03-18"
+      },
+      "imagen": "pexels-helmy-zairy-15253379.jpg",
+      "nota": "Recién lavado",
+      "kilometraje": 18891
+    },
+    {
+      "id": "5",
+      "marca": "Opel",
+      "modelo": "Corsa",
+      "año": 2014,
+      "color": "Rojo",
+      "matricula": "4348ZKR",
+      "precio_diario": 80,
+      "alquiler": {
+        "clienteNombre": "Laura Fernández González",
+        "fechaInicio": "2023-02-22"
+      },
+      "imagen": "pexels-erik-mclean-5214413.jpg",
+      "nota": "Interior impecable",
+      "kilometraje": 26943
+    },
+    {
+      "id": "6",
+      "marca": "Volkswagen",
+      "modelo": "Tiguan",
+      "año": 2011,
+      "color": "Blanco",
+      "matricula": "9862PBJ",
+      "precio_diario": 69,
+      "alquiler": {
+        "clienteNombre": "Isabel Martínez Fernández",
+        "fechaInicio": "2023-02-22"
+      },
+      "imagen": "pexels-ahmed-zaki-15330936.jpg",
+      "nota": "Algunos rasguños",
+      "kilometraje": 45512
+    },
+    {
+      "id": "7",
+      "marca": "Citroën",
+      "modelo": "Berlingo",
+      "año": 2015,
+      "color": "Azul",
+      "matricula": "3458DCY",
+      "precio_diario": 63,
+      "alquiler": null,
+      "imagen": "pexels-alteredsnaps-15240986.jpg",
+      "nota": "Necesita reparación",
+      "kilometraje": 72253
+    },
+    {
+      "id": "8",
+      "marca": "Renault",
+      "modelo": "Mégane",
+      "año": 2000,
+      "color": "Negro",
+      "matricula": "5411LJD",
+      "precio_diario": 56,
+      "alquiler": {
+        "clienteNombre": "Manuel Sánchez González",
+        "fechaInicio": "2024-02-08"
+      },
+      "imagen": "pexels-alteredsnaps-15240836.jpg",
+      "nota": null,
+      "kilometraje": 97495
+    },
+    {
+      "id": "9",
+      "marca": "Seat",
+      "modelo": "Arona",
+      "año": 2019,
+      "color": "Negro",
+      "matricula": "3675GZL",
+      "precio_diario": 89,
+      "alquiler": {
+        "clienteNombre": "Manuel García Sánchez",
+        "fechaInicio": "2024-02-07"
+      },
+      "imagen": "pexels-malcoln-oliveira-15266274.jpg",
+      "nota": "Perfecto estado",
+      "kilometraje": 65355
+    },
+    {
+      "id": "10",
+      "marca": "Citroën",
+      "modelo": "C3",
+      "año": 2025,
+      "color": "Rojo",
+      "matricula": "1632RSX",
+      "precio_diario": 87,
+      "alquiler": {
+        "clienteNombre": "Manuel Sánchez González",
+        "fechaInicio": "2023-04-02"
+      },
+      "imagen": "pexels-s-von-hoerst-2920064.jpg",
+      "nota": null,
+      "kilometraje": 34318
+    },
+    {
+      "id": "11",
+      "marca": "Seat",
+      "modelo": "Ibiza",
+      "año": 2000,
+      "color": "Negro",
+      "matricula": "7578HWG",
+      "precio_diario": 82,
+      "alquiler": {
+        "clienteNombre": "José González López",
+        "fechaInicio": "2022-04-07"
+      },
+      "imagen": "pexels-scott-neil-15367020.jpg",
+      "nota": null,
+      "kilometraje": 1459
+    },
+    {
+      "id": "12",
+      "marca": "Peugeot",
+      "modelo": "208",
+      "año": 2015,
+      "color": "Amarillo",
+      "matricula": "5552DLZ",
+      "precio_diario": 46,
+      "alquiler": {
+        "clienteNombre": "Antonio Sánchez Sánchez",
+        "fechaInicio": "2023-06-16"
+      },
+      "imagen": "pexels-brady-knoll-3221165.jpg",
+      "nota": null,
+      "kilometraje": 40490
+    },
+    {
+      "id": "13",
+      "marca": "Opel",
+      "modelo": "Corsa",
+      "año": 2002,
+      "color": "Azul",
+      "matricula": "5741LGT",
+      "precio_diario": 98,
+      "alquiler": {
+        "clienteNombre": "Manuel Fernándeznull",
+        "fechaInicio": "2022-03-25"
+      },
+      "imagen": "pexels-aleksey-kuprikov-3786091.jpg",
+      "nota": null,
+      "kilometraje": 16311
+    },
+    {
+      "id": "14",
+      "marca": "Volkswagen",
+      "modelo": "Tiguan",
+      "año": 2008,
+      "color": "Amarillo",
+      "matricula": "4961WHJ",
+      "precio_diario": 50,
+      "alquiler": {
+        "clienteNombre": "María Martínez Sánchez",
+        "fechaInicio": "2023-11-26"
+      },
+      "imagen": "pexels-tubagus-alief-leo-15415297.jpg",
+      "nota": "Algunos rasguños",
+      "kilometraje": 86979
+    },
+    {
+      "id": "15",
+      "marca": "Peugeot",
+      "modelo": "208",
+      "año": 2007,
+      "color": "Azul",
+      "matricula": "7250TJH",
+      "precio_diario": 73,
+      "alquiler": {
+        "clienteNombre": "José González Fernández",
+        "fechaInicio": "2022-03-20"
+      },
+      "imagen": "pexels-mikhail-matveev-2876872.jpg",
+      "nota": null,
+      "kilometraje": 50151
+    },
+    {
+      "id": "16",
+      "marca": "Renault",
+      "modelo": "Captur",
+      "año": 2003,
+      "color": "Azul",
+      "matricula": "5472YSK",
+      "precio_diario": 37,
+      "alquiler": {
+        "clienteNombre": "José López Fernández",
+        "fechaInicio": "2023-03-26"
+      },
+      "imagen": "pexels-bekir-umut-vural-15441453.jpg",
+      "nota": null,
+      "kilometraje": 68391
+    },
+    {
+      "id": "17",
+      "marca": "Volkswagen",
+      "modelo": "Polo",
+      "año": 2004,
+      "color": "Negro",
+      "matricula": "9250GTL",
+      "precio_diario": 40,
+      "alquiler": {
+        "clienteNombre": "María Martínez González",
+        "fechaInicio": "2022-10-13"
+      },
+      "imagen": "pexels-mouli-ghosh-18547037.jpg",
+      "nota": "Recién lavado",
+      "kilometraje": 44035
+    },
+    {
+      "id": "18",
+      "marca": "Volkswagen",
+      "modelo": "Tiguan",
+      "año": 2006,
+      "color": "Blanco",
+      "matricula": "3896SNN",
+      "precio_diario": 56,
+      "alquiler": {
+        "clienteNombre": "Manuel Sánchez González",
+        "fechaInicio": "2022-07-08"
+      },
+      "imagen": "pexels-george-sultan-1768826.jpg",
+      "nota": "Interior impecable",
+      "kilometraje": 59021
+    },
+    {
+      "id": "19",
+      "marca": "Seat",
+      "modelo": "Ibiza",
+      "año": 2021,
+      "color": "Rojo",
+      "matricula": "9024SJF",
+      "precio_diario": 67,
+      "alquiler": {
+        "clienteNombre": "José Sánchez Fernández",
+        "fechaInicio": "2022-07-29"
+      },
+      "imagen": "pexels-mat-brown-952338.jpg",
+      "nota": "Recién lavado",
+      "kilometraje": 67080
+    },
+    {
+      "id": "20",
+      "marca": "Opel",
+      "modelo": "Astra",
+      "año": 2000,
+      "color": "Blanco",
+      "matricula": "4264DHS",
+      "precio_diario": 30,
+      "alquiler": {
+        "clienteNombre": "José González González",
+        "fechaInicio": "2024-02-24"
+      },
+      "imagen": "pexels-s-von-hoerst-2676096.jpg",
+      "nota": null,
+      "kilometraje": 29529
+    },
+    {
+      "id": "21",
+      "marca": "Peugeot",
+      "modelo": "308",
+      "año": 2020,
+      "color": "Azul",
+      "matricula": "6557ZZT",
+      "precio_diario": 65,
+      "alquiler": null,
+      "imagen": "pexels-nubia-navarro-(nubikini)-386025.jpg",
+      "nota": null,
+      "kilometraje": 13239
+    },
+    {
+      "id": "22",
+      "marca": "Opel",
+      "modelo": "Corsa",
+      "año": 2023,
+      "color": "Amarillo",
+      "matricula": "2917HTP",
+      "precio_diario": 30,
+      "alquiler": null,
+      "imagen": "pexels-emre-aslihak-15107450.jpg",
+      "nota": null,
+      "kilometraje": 86020
+    },
+    {
+      "id": "23",
+      "marca": "Opel",
+      "modelo": "Astra",
+      "año": 2024,
+      "color": "Negro",
+      "matricula": "7802JWR",
+      "precio_diario": 54,
+      "alquiler": {
+        "clienteNombre": "Manuel Fernándeznull",
+        "fechaInicio": "2024-01-01"
+      },
+      "imagen": "pexels-kamshotthat-5086489.jpg",
+      "nota": "Interior impecable",
+      "kilometraje": 13285
+    },
+    {
+      "id": "24",
+      "marca": "Seat",
+      "modelo": "Arona",
+      "año": 2021,
+      "color": "Blanco",
+      "matricula": "1473XWK",
+      "precio_diario": 61,
+      "alquiler": {
+        "clienteNombre": "Manuel García López",
+        "fechaInicio": "2023-10-12"
+      },
+      "imagen": "pexels-lukas-žvikas-1075947.jpg",
+      "nota": "Recién lavado",
+      "kilometraje": 79731
+    },
+    {
+      "id": "25",
+      "marca": "Volkswagen",
+      "modelo": "Polo",
+      "año": 2011,
+      "color": "Negro",
+      "matricula": "1856FCD",
+      "precio_diario": 62,
+      "alquiler": {
+        "clienteNombre": "Antonio González Martínez",
+        "fechaInicio": "2023-03-07"
+      },
+      "imagen": "pexels-albin-berlin-919073.jpg",
+      "nota": null,
+      "kilometraje": 87224
+    },
+    {
+      "id": "26",
+      "marca": "Seat",
+      "modelo": "Ibiza",
+      "año": 2024,
+      "color": "Amarillo",
+      "matricula": "3147ZTP",
+      "precio_diario": 71,
+      "alquiler": null,
+      "imagen": "pexels-pixabay-39501.jpg",
+      "nota": "Recién lavado",
+      "kilometraje": 92913
+    },
+    {
+      "id": "27",
+      "marca": "Seat",
+      "modelo": "Ibiza",
+      "año": 2007,
+      "color": "Blanco",
+      "matricula": "4777WWF",
+      "precio_diario": 36,
+      "alquiler": null,
+      "imagen": "pexels-eduardo-valdes-15435381.jpg",
+      "nota": null,
+      "kilometraje": 10134
+    },
+    {
+      "id": "28",
+      "marca": "Opel",
+      "modelo": "Corsa",
+      "año": 2023,
+      "color": "Azul",
+      "matricula": "1162JPZ",
+      "precio_diario": 48,
+      "alquiler": {
+        "clienteNombre": "Manuel Sánchez González",
+        "fechaInicio": "2023-11-09"
+      },
+      "imagen": "pexels-arnie-watkins-3156482.jpg",
+      "nota": "Perfecto estado",
+      "kilometraje": 84894
+    },
+    {
+      "id": "29",
+      "marca": "Citroën",
+      "modelo": "C3",
+      "año": 2019,
+      "color": "Rojo",
+      "matricula": "8197SRH",
+      "precio_diario": 75,
+      "alquiler": {
+        "clienteNombre": "José López Fernández",
+        "fechaInicio": "2024-02-22"
+      },
+      "imagen": "pexels-prime-cinematics-2036544.jpg",
+      "nota": null,
+      "kilometraje": 44182
+    },
+    {
+      "id": "30",
+      "marca": "Volkswagen",
+      "modelo": "Tiguan",
+      "año": 2014,
+      "color": "Rojo",
+      "matricula": "4867NPT",
+      "precio_diario": 43,
+      "alquiler": {
+        "clienteNombre": "Isabel López Martínez",
+        "fechaInicio": "2023-12-04"
+      },
+      "imagen": "pexels-kelvin-valerio-1519192.jpg",
+      "nota": "Necesita reparación",
+      "kilometraje": 4484
+    },
+    {
+      "id": "31",
+      "marca": "Volkswagen",
+      "modelo": "Golf",
+      "año": 2016,
+      "color": "Blanco",
+      "matricula": "1129SCB",
+      "precio_diario": 96,
+      "alquiler": {
+        "clienteNombre": "Isabel López Martínez",
+        "fechaInicio": "2022-04-12"
+      },
+      "imagen": "pexels-may-dayua-1545743.jpg",
+      "nota": null,
+      "kilometraje": 95529
+    },
+    {
+      "id": "32",
+      "marca": "Citroën",
+      "modelo": "Berlingo",
+      "año": 2011,
+      "color": "Verde",
+      "matricula": "7701LWX",
+      "precio_diario": 70,
+      "alquiler": {
+        "clienteNombre": "Laura Fernández González",
+        "fechaInicio": "2023-10-08"
+      },
+      "imagen": "pexels-roberto-nickson-3166786.jpg",
+      "nota": null,
+      "kilometraje": 73716
+    },
+    {
+      "id": "33",
+      "marca": "Opel",
+      "modelo": "Grandland",
+      "año": 2003,
+      "color": "Verde",
+      "matricula": "9104XTX",
+      "precio_diario": 91,
+      "alquiler": {
+        "clienteNombre": "Laura Fernández Sánchez",
+        "fechaInicio": "2022-01-22"
+      },
+      "imagen": "pexels-dmitry-zvolskiy-1637859.jpg",
+      "nota": null,
+      "kilometraje": 1131
+    },
+    {
+      "id": "34",
+      "marca": "Renault",
+      "modelo": "Mégane",
+      "año": 2024,
+      "color": "Verde",
+      "matricula": "7601YPK",
+      "precio_diario": 61,
+      "alquiler": {
+        "clienteNombre": "Laura Sánchez González",
+        "fechaInicio": "2022-03-16"
+      },
+      "imagen": "pexels-kamshotthat-3457780.jpg",
+      "nota": null,
+      "kilometraje": 19631
+    },
+    {
+      "id": "35",
+      "marca": "Citroën",
+      "modelo": "C4",
+      "año": 2001,
+      "color": "Negro",
+      "matricula": "1288LDV",
+      "precio_diario": 50,
+      "alquiler": {
+        "clienteNombre": "José González López",
+        "fechaInicio": "2022-12-02"
+      },
+      "imagen": "pexels-mike-bird-116675.jpg",
+      "nota": "Necesita reparación",
+      "kilometraje": 99277
+    },
+    {
+      "id": "36",
+      "marca": "Opel",
+      "modelo": "Corsa",
+      "año": 2021,
+      "color": "Verde",
+      "matricula": "1724NWX",
+      "precio_diario": 69,
+      "alquiler": {
+        "clienteNombre": "José Sánchez García",
+        "fechaInicio": "2023-01-14"
+      },
+      "imagen": "pexels-pixabay-38637.jpg",
+      "nota": null,
+      "kilometraje": 50197
+    },
+    {
+      "id": "37",
+      "marca": "Opel",
+      "modelo": "Astra",
+      "año": 2009,
+      "color": "Blanco",
+      "matricula": "3943XVM",
+      "precio_diario": 81,
+      "alquiler": null,
+      "imagen": "pexels-avinash-patel-544542.jpg",
+      "nota": null,
+      "kilometraje": 35922
+    },
+    {
+      "id": "38",
+      "marca": "Opel",
+      "modelo": "Astra",
+      "año": 2011,
+      "color": "Azul",
+      "matricula": "9343DTR",
+      "precio_diario": 47,
+      "alquiler": {
+        "clienteNombre": "Isabel López Martínez",
+        "fechaInicio": "2022-08-08"
+      },
+      "imagen": "pexels-markus-spiske-1729993.jpg",
+      "nota": null,
+      "kilometraje": 78597
+    },
+    {
+      "id": "39",
+      "marca": "Opel",
+      "modelo": "Grandland",
+      "año": 2022,
+      "color": "Negro",
+      "matricula": "4479GPL",
+      "precio_diario": 94,
+      "alquiler": {
+        "clienteNombre": "Antonio González González",
+        "fechaInicio": "2022-07-13"
+      },
+      "imagen": "pexels-mike-bird-112460.jpg",
+      "nota": "Interior impecable",
+      "kilometraje": 56413
+    },
+    {
+      "id": "40",
+      "marca": "Renault",
+      "modelo": "Clio",
+      "año": 2023,
+      "color": "Rojo",
+      "matricula": "9480YLH",
+      "precio_diario": 46,
+      "alquiler": {
+        "clienteNombre": "María García González",
+        "fechaInicio": "2022-01-16"
+      },
+      "imagen": "pexels-simon-berger-730615.jpg",
+      "nota": null,
+      "kilometraje": 65583
+    },
+    {
+      "id": "41",
+      "marca": "Citroën",
+      "modelo": "C3",
+      "año": 2009,
+      "color": "Blanco",
+      "matricula": "3329PGZ",
+      "precio_diario": 96,
+      "alquiler": {
+        "clienteNombre": "Isabel González Martínez",
+        "fechaInicio": "2023-10-01"
+      },
+      "imagen": "pexels-christian-1164778.jpg",
+      "nota": null,
+      "kilometraje": 46844
+    },
+    {
+      "id": "42",
+      "marca": "Citroën",
+      "modelo": "Berlingo",
+      "año": 2002,
+      "color": "Blanco",
+      "matricula": "4557ZVS",
+      "precio_diario": 52,
+      "alquiler": null,
+      "imagen": "pexels-shaan-johari-2405039.jpg",
+      "nota": "Perfecto estado",
+      "kilometraje": 17190
+    },
+    {
+      "id": "43",
+      "marca": "Renault",
+      "modelo": "Captur",
+      "año": 2024,
+      "color": "Amarillo",
+      "matricula": "5495SBZ",
+      "precio_diario": 80,
+      "alquiler": {
+        "clienteNombre": "María Martínez González",
+        "fechaInicio": "2022-07-19"
+      },
+      "imagen": "pexels-brady-knoll-3221159.jpg",
+      "nota": "Algunos rasguños",
+      "kilometraje": 64925
+    },
+    {
+      "id": "44",
+      "marca": "Citroën",
+      "modelo": "Berlingo",
+      "año": 2004,
+      "color": "Verde",
+      "matricula": "7718ZFP",
+      "precio_diario": 50,
+      "alquiler": {
+        "clienteNombre": "Manuel García López",
+        "fechaInicio": "2022-05-08"
+      },
+      "imagen": "pexels-anton-imbro-1975106.jpg",
+      "nota": null,
+      "kilometraje": 22370
+    },
+    {
+      "id": "45",
+      "marca": "Opel",
+      "modelo": "Grandland",
+      "año": 2008,
+      "color": "Rojo",
+      "matricula": "3222GRG",
+      "precio_diario": 97,
+      "alquiler": {
+        "clienteNombre": "Manuel Fernández Fernández",
+        "fechaInicio": "2022-05-16"
+      },
+      "imagen": "pexels-jay-pizzle-3752194.jpg",
+      "nota": null,
+      "kilometraje": 3500
+    },
+    {
+      "id": "46",
+      "marca": "Volkswagen",
+      "modelo": "Golf",
+      "año": 2012,
+      "color": "Amarillo",
+      "matricula": "6892YDX",
+      "precio_diario": 79,
+      "alquiler": null,
+      "imagen": "pexels-luca-musella-15437071.jpg",
+      "nota": "Recién lavado",
+      "kilometraje": 48714
+    },
+    {
+      "id": "47",
+      "marca": "Peugeot",
+      "modelo": "3008",
+      "año": 2017,
+      "color": "Azul",
+      "matricula": "6577WVN",
+      "precio_diario": 51,
+      "alquiler": null,
+      "imagen": "pexels-matheus-viana-3863737.jpg",
+      "nota": null,
+      "kilometraje": 96495
+    },
+    {
+      "id": "48",
+      "marca": "Renault",
+      "modelo": "Mégane",
+      "año": 2002,
+      "color": "Azul",
+      "matricula": "5809JKS",
+      "precio_diario": 35,
+      "alquiler": null,
+      "imagen": "pexels-tim-board-15435320.jpg",
+      "nota": "Interior impecable",
+      "kilometraje": 53945
+    },
+    {
+      "id": "49",
+      "marca": "Volkswagen",
+      "modelo": "Tiguan",
+      "año": 2010,
+      "color": "Verde",
+      "matricula": "3815GLY",
+      "precio_diario": 54,
+      "alquiler": null,
+      "imagen": "pexels-tom-verdoot-1972736.jpg",
+      "nota": "Algunos rasguños",
+      "kilometraje": 75535
+    },
+    {
+      "id": "50",
+      "marca": "Volkswagen",
+      "modelo": "Golf",
+      "año": 2016,
+      "color": "Verde",
+      "matricula": "9753FLN",
+      "precio_diario": 82,
+      "alquiler": {
+        "clienteNombre": "José López García",
+        "fechaInicio": "2023-02-02"
+      },
+      "imagen": "pexels-eduardo-valdes-15435357.jpg",
+      "nota": "Recién lavado",
+      "kilometraje": 47521
+    },
+    {
+      "id": "51",
+      "marca": "Citroën",
+      "modelo": "C4",
+      "año": 2011,
+      "color": "Negro",
+      "matricula": "2125TLW",
+      "precio_diario": 59,
+      "alquiler": null,
+      "imagen": "pexels-abdulwahab-alawadhi-3422964.jpg",
+      "nota": "Recién lavado",
+      "kilometraje": 93547
+    },
+    {
+      "id": "52",
+      "marca": "Seat",
+      "modelo": "Arona",
+      "año": 2006,
+      "color": "Azul",
+      "matricula": "1103PXK",
+      "precio_diario": 69,
+      "alquiler": {
+        "clienteNombre": "María García García",
+        "fechaInicio": "2023-04-26"
+      },
+      "imagen": "pexels-jesse-zheng-1213294.jpg",
+      "nota": "Perfecto estado",
+      "kilometraje": 78646
+    },
+    {
+      "id": "53",
+      "marca": "Citroën",
+      "modelo": "C4",
+      "año": 2012,
+      "color": "Azul",
+      "matricula": "2593LSC",
+      "precio_diario": 70,
+      "alquiler": null,
+      "imagen": "pexels-lina-kivaka-1841120.jpg",
+      "nota": null,
+      "kilometraje": 53058
+    },
+    {
+      "id": "54",
+      "marca": "Peugeot",
+      "modelo": "3008",
+      "año": 2021,
+      "color": "Negro",
+      "matricula": "8224TXB",
+      "precio_diario": 61,
+      "alquiler": null,
+      "imagen": "pexels-adrian-dorobantu-2127733.jpg",
+      "nota": null,
+      "kilometraje": 18351
+    },
+    {
+      "id": "55",
+      "marca": "Peugeot",
+      "modelo": "208",
+      "año": 2009,
+      "color": "Rojo",
+      "matricula": "5669PFD",
+      "precio_diario": 66,
+      "alquiler": {
+        "clienteNombre": "Antonio García Fernández",
+        "fechaInicio": "2023-09-05"
+      },
+      "imagen": "pexels-alteredsnaps-15240734.jpg",
+      "nota": "Interior impecable",
+      "kilometraje": 34308
+    },
+    {
+      "id": "56",
+      "marca": "Seat",
+      "modelo": "Arona",
+      "año": 2016,
+      "color": "Verde",
+      "matricula": "5023XXP",
+      "precio_diario": 96,
+      "alquiler": {
+        "clienteNombre": "José González González",
+        "fechaInicio": "2023-06-24"
+      },
+      "imagen": "pexels-deacan-white-15244414.jpg",
+      "nota": "Interior impecable",
+      "kilometraje": 79018
+    },
+    {
+      "id": "57",
+      "marca": "Renault",
+      "modelo": "Mégane",
+      "año": 2000,
+      "color": "Azul",
+      "matricula": "7786RTN",
+      "precio_diario": 70,
+      "alquiler": {
+        "clienteNombre": "María García González",
+        "fechaInicio": "2024-01-17"
+      },
+      "imagen": "pexels-vlad-alexandru-popa-1402787.jpg",
+      "nota": null,
+      "kilometraje": 60818
+    },
+    {
+      "id": "58",
+      "marca": "Renault",
+      "modelo": "Clio",
+      "año": 2001,
+      "color": "Negro",
+      "matricula": "4262DVY",
+      "precio_diario": 70,
+      "alquiler": null,
+      "imagen": "pexels-alex-azabache-3879065.jpg",
+      "nota": "Algunos rasguños",
+      "kilometraje": 13257
+    },
+    {
+      "id": "59",
+      "marca": "Peugeot",
+      "modelo": "308",
+      "año": 2001,
+      "color": "Rojo",
+      "matricula": "3833CMJ",
+      "precio_diario": 75,
+      "alquiler": null,
+      "imagen": "pexels-mike-noga-3608542.jpg",
+      "nota": "Algunos rasguños",
+      "kilometraje": 2233
+    },
+    {
+      "id": "60",
+      "marca": "Citroën",
+      "modelo": "C3",
+      "año": 2022,
+      "color": "Blanco",
+      "matricula": "3989MKG",
+      "precio_diario": 65,
+      "alquiler": null,
+      "imagen": "pexels-jerry-wang-15343322.jpg",
+      "nota": "Perfecto estado",
+      "kilometraje": 68892
+    },
+    {
+      "id": "61",
+      "marca": "Volkswagen",
+      "modelo": "Tiguan",
+      "año": 2000,
+      "color": "Negro",
+      "matricula": "2972TFS",
+      "precio_diario": 60,
+      "alquiler": {
+        "clienteNombre": "Manuel García López",
+        "fechaInicio": "2023-10-14"
+      },
+      "imagen": "pexels-jay-pizzle-3802510.jpg",
+      "nota": "Necesita reparación",
+      "kilometraje": 97784
+    },
+    {
+      "id": "62",
+      "marca": "Citroën",
+      "modelo": "C4",
+      "año": 2020,
+      "color": "Negro",
+      "matricula": "3501GCG",
+      "precio_diario": 37,
+      "alquiler": {
+        "clienteNombre": "Laura González González",
+        "fechaInicio": "2023-05-24"
+      },
+      "imagen": "pexels-zsolt-joo-2882234.jpg",
+      "nota": "Perfecto estado",
+      "kilometraje": 3732
+    },
+    {
+      "id": "63",
+      "marca": "Seat",
+      "modelo": "León",
+      "año": 2009,
+      "color": "Amarillo",
+      "matricula": "7698PJN",
+      "precio_diario": 42,
+      "alquiler": {
+        "clienteNombre": "José Sánchez Fernández",
+        "fechaInicio": "2024-02-10"
+      },
+      "imagen": "pexels-luca-istrate-15469364.jpg",
+      "nota": null,
+      "kilometraje": 68014
+    },
+    {
+      "id": "64",
+      "marca": "Peugeot",
+      "modelo": "3008",
+      "año": 2014,
+      "color": "Blanco",
+      "matricula": "4956GFB",
+      "precio_diario": 40,
+      "alquiler": {
+        "clienteNombre": "María Martínez González",
+        "fechaInicio": "2023-05-13"
+      },
+      "imagen": "pexels-peter-s-15443344.jpg",
+      "nota": "Interior impecable",
+      "kilometraje": 61287
+    },
+    {
+      "id": "65",
+      "marca": "Peugeot",
+      "modelo": "308",
+      "año": 2023,
+      "color": "Verde",
+      "matricula": "9832BST",
+      "precio_diario": 74,
+      "alquiler": null,
+      "imagen": "pexels-thuany-marcante-1805053.jpg",
+      "nota": null,
+      "kilometraje": 48422
+    },
+    {
+      "id": "66",
+      "marca": "Renault",
+      "modelo": "Captur",
+      "año": 2023,
+      "color": "Amarillo",
+      "matricula": "6535SBJ",
+      "precio_diario": 48,
+      "alquiler": {
+        "clienteNombre": "María Martínez Sánchez",
+        "fechaInicio": "2023-11-03"
+      },
+      "imagen": "pexels-ryan-west-1719648.jpg",
+      "nota": null,
+      "kilometraje": 90688
+    },
+    {
+      "id": "67",
+      "marca": "Renault",
+      "modelo": "Clio",
+      "año": 2001,
+      "color": "Blanco",
+      "matricula": "4267VNK",
+      "precio_diario": 37,
+      "alquiler": {
+        "clienteNombre": "Manuel García Sánchez",
+        "fechaInicio": "2023-12-06"
+      },
+      "imagen": "pexels-alteredsnaps-15240700.jpg",
+      "nota": null,
+      "kilometraje": 60991
+    },
+    {
+      "id": "68",
+      "marca": "Opel",
+      "modelo": "Corsa",
+      "año": 2015,
+      "color": "Blanco",
+      "matricula": "8405KCM",
+      "precio_diario": 74,
+      "alquiler": null,
+      "imagen": "pexels-gabriel-hohol-3593922.jpg",
+      "nota": null,
+      "kilometraje": 87272
+    },
+    {
+      "id": "69",
+      "marca": "Renault",
+      "modelo": "Clio",
+      "año": 2014,
+      "color": "Azul",
+      "matricula": "5886BPN",
+      "precio_diario": 84,
+      "alquiler": null,
+      "imagen": "pexels-asish-aji-15439635.jpg",
+      "nota": null,
+      "kilometraje": 16694
+    },
+    {
+      "id": "70",
+      "marca": "Volkswagen",
+      "modelo": "Tiguan",
+      "año": 2020,
+      "color": "Verde",
+      "matricula": "2764GPM",
+      "precio_diario": 98,
+      "alquiler": {
+        "clienteNombre": "José Sánchez Fernández",
+        "fechaInicio": "2024-02-10"
+      },
+      "imagen": "pexels-tnarg-2906849.jpg",
+      "nota": null,
+      "kilometraje": 33813
+    },
+    {
+      "id": "71",
+      "marca": "Peugeot",
+      "modelo": "3008",
+      "año": 2016,
+      "color": "Amarillo",
+      "matricula": "6251LZM",
+      "precio_diario": 44,
+      "alquiler": {
+        "clienteNombre": "Manuel Sánchez Martínez",
+        "fechaInicio": "2022-12-23"
+      },
+      "imagen": "pexels-ali-kazal-15448449.jpg",
+      "nota": "Necesita reparación",
+      "kilometraje": 41141
+    },
+    {
+      "id": "72",
+      "marca": "Opel",
+      "modelo": "Corsa",
+      "año": 2009,
+      "color": "Rojo",
+      "matricula": "2350PPZ",
+      "precio_diario": 95,
+      "alquiler": {
+        "clienteNombre": "Antonio González Martínez",
+        "fechaInicio": "2023-12-13"
+      },
+      "imagen": "pexels-jacob-morch-457418.jpg",
+      "nota": null,
+      "kilometraje": 75308
+    },
+    {
+      "id": "73",
+      "marca": "Peugeot",
+      "modelo": "3008",
+      "año": 2023,
+      "color": "Azul",
+      "matricula": "4865HXT",
+      "precio_diario": 30,
+      "alquiler": {
+        "clienteNombre": "María Martínez González",
+        "fechaInicio": "2022-06-17"
+      },
+      "imagen": "pexels-祝-鹤槐-691595.jpg",
+      "nota": null,
+      "kilometraje": 70133
+    },
+    {
+      "id": "74",
+      "marca": "Citroën",
+      "modelo": "C4",
+      "año": 2022,
+      "color": "Negro",
+      "matricula": "2732MDZ",
+      "precio_diario": 45,
+      "alquiler": {
+        "clienteNombre": "Isabel Sánchez Sánchez",
+        "fechaInicio": "2023-09-15"
+      },
+      "imagen": "pexels-mike-bird-977003.jpg",
+      "nota": "Algunos rasguños",
+      "kilometraje": 15643
+    },
+    {
+      "id": "75",
+      "marca": "Volkswagen",
+      "modelo": "Golf",
+      "año": 2021,
+      "color": "Azul",
+      "matricula": "6431GPB",
+      "precio_diario": 77,
+      "alquiler": null,
+      "imagen": "pexels-jay-pizzle-15085605.jpg",
+      "nota": "Algunos rasguños",
+      "kilometraje": 63819
+    },
+    {
+      "id": "76",
+      "marca": "Peugeot",
+      "modelo": "3008",
+      "año": 2018,
+      "color": "Verde",
+      "matricula": "7041ZSG",
+      "precio_diario": 75,
+      "alquiler": {
+        "clienteNombre": "María García García",
+        "fechaInicio": "2023-05-24"
+      },
+      "imagen": "pexels-cesar-perez-733745.jpg",
+      "nota": "Perfecto estado",
+      "kilometraje": 33611
+    },
+    {
+      "id": "77",
+      "marca": "Opel",
+      "modelo": "Corsa",
+      "año": 2022,
+      "color": "Negro",
+      "matricula": "6903HXB",
+      "precio_diario": 79,
+      "alquiler": {
+        "clienteNombre": "Manuel López Sánchez",
+        "fechaInicio": "2023-09-02"
+      },
+      "imagen": "pexels-charles-kettor-831475.jpg",
+      "nota": "Perfecto estado",
+      "kilometraje": 99034
+    },
+    {
+      "id": "78",
+      "marca": "Seat",
+      "modelo": "León",
+      "año": 2019,
+      "color": "Verde",
+      "matricula": "5262VHD",
+      "precio_diario": 35,
+      "alquiler": {
+        "clienteNombre": "Manuel López Sánchez",
+        "fechaInicio": "2023-03-28"
+      },
+      "imagen": "pexels-eduardo-gorghetto-13369577.jpg",
+      "nota": "Perfecto estado",
+      "kilometraje": 18937
+    },
+    {
+      "id": "79",
+      "marca": "Renault",
+      "modelo": "Captur",
+      "año": 2001,
+      "color": "Azul",
+      "matricula": "8876GLY",
+      "precio_diario": 83,
+      "alquiler": {
+        "clienteNombre": "Laura Sánchez López",
+        "fechaInicio": "2023-04-09"
+      },
+      "imagen": "pexels-anıl-karakaya-15358882.jpg",
+      "nota": null,
+      "kilometraje": 6155
+    },
+    {
+      "id": "80",
+      "marca": "Renault",
+      "modelo": "Mégane",
+      "año": 2008,
+      "color": "Verde",
+      "matricula": "5118VYJ",
+      "precio_diario": 69,
+      "alquiler": null,
+      "imagen": "pexels-garvin-st-villier-3311574.jpg",
+      "nota": null,
+      "kilometraje": 11528
+    },
+    {
+      "id": "81",
+      "marca": "Volkswagen",
+      "modelo": "Tiguan",
+      "año": 2006,
+      "color": "Rojo",
+      "matricula": "5508BRL",
+      "precio_diario": 95,
+      "alquiler": {
+        "clienteNombre": "José García López",
+        "fechaInicio": "2024-02-25"
+      },
+      "imagen": "pexels-olena-bohovyk-3646108.jpg",
+      "nota": "Interior impecable",
+      "kilometraje": 86296
+    },
+    {
+      "id": "82",
+      "marca": "Renault",
+      "modelo": "Clio",
+      "año": 2013,
+      "color": "Negro",
+      "matricula": "7181RYY",
+      "precio_diario": 50,
+      "alquiler": null,
+      "imagen": "pexels-trace-constant-707046.jpg",
+      "nota": "Necesita reparación",
+      "kilometraje": 15478
+    },
+    {
+      "id": "83",
+      "marca": "Peugeot",
+      "modelo": "3008",
+      "año": 2012,
+      "color": "Negro",
+      "matricula": "6392NRR",
+      "precio_diario": 38,
+      "alquiler": {
+        "clienteNombre": "Isabel Martínez García",
+        "fechaInicio": "2024-01-23"
+      },
+      "imagen": "pexels-julio-nery-1687147.jpg",
+      "nota": null,
+      "kilometraje": 89952
+    },
+    {
+      "id": "84",
+      "marca": "Citroën",
+      "modelo": "Berlingo",
+      "año": 2016,
+      "color": "Negro",
+      "matricula": "3050JSP",
+      "precio_diario": 36,
+      "alquiler": {
+        "clienteNombre": "Manuel Martínez García",
+        "fechaInicio": "2022-02-15"
+      },
+      "imagen": "pexels-alexgtacar-1592384.jpg",
+      "nota": null,
+      "kilometraje": 77591
+    },
+    {
+      "id": "85",
+      "marca": "Renault",
+      "modelo": "Captur",
+      "año": 2020,
+      "color": "Verde",
+      "matricula": "1867XHF",
+      "precio_diario": 62,
+      "alquiler": null,
+      "imagen": "pexels-mike-bird-1335077.jpg",
+      "nota": null,
+      "kilometraje": 84034
+    },
+    {
+      "id": "86",
+      "marca": "Renault",
+      "modelo": "Captur",
+      "año": 2009,
+      "color": "Amarillo",
+      "matricula": "4849KLB",
+      "precio_diario": 82,
+      "alquiler": {
+        "clienteNombre": "Manuel López Sánchez",
+        "fechaInicio": "2022-05-24"
+      },
+      "imagen": "pexels-aleksey-kuprikov-3786092.jpg",
+      "nota": "Interior impecable",
+      "kilometraje": 15063
+    },
+    {
+      "id": "87",
+      "marca": "Seat",
+      "modelo": "León",
+      "año": 2015,
+      "color": "Amarillo",
+      "matricula": "2712CXK",
+      "precio_diario": 92,
+      "alquiler": {
+        "clienteNombre": "Isabel López Martínez",
+        "fechaInicio": "2023-07-01"
+      },
+      "imagen": "pexels-ebin-kuriakose-15305882.jpg",
+      "nota": "Recién lavado",
+      "kilometraje": 76735
+    },
+    {
+      "id": "88",
+      "marca": "Opel",
+      "modelo": "Grandland",
+      "año": 2020,
+      "color": "Negro",
+      "matricula": "4935RMC",
+      "precio_diario": 55,
+      "alquiler": {
+        "clienteNombre": "María García García",
+        "fechaInicio": "2022-10-05"
+      },
+      "imagen": "pexels-viktor-lundberg-754595.jpg",
+      "nota": "Interior impecable",
+      "kilometraje": 10485
+    },
+    {
+      "id": "89",
+      "marca": "Citroën",
+      "modelo": "Berlingo",
+      "año": 2015,
+      "color": "Blanco",
+      "matricula": "1891TLG",
+      "precio_diario": 100,
+      "alquiler": null,
+      "imagen": "pexels-oleksandr-p-376361.jpg",
+      "nota": "Recién lavado",
+      "kilometraje": 68847
+    },
+    {
+      "id": "90",
+      "marca": "Seat",
+      "modelo": "Arona",
+      "año": 2022,
+      "color": "Amarillo",
+      "matricula": "6766SYF",
+      "precio_diario": 85,
+      "alquiler": {
+        "clienteNombre": "Laura Fernández González",
+        "fechaInicio": "2023-06-24"
+      },
+      "imagen": "pexels-dorota-semla-15463971.jpg",
+      "nota": "Recién lavado",
+      "kilometraje": 34166
+    },
+    {
+      "id": "91",
+      "marca": "Renault",
+      "modelo": "Captur",
+      "año": 2005,
+      "color": "Verde",
+      "matricula": "6735VVR",
+      "precio_diario": 67,
+      "alquiler": {
+        "clienteNombre": "Manuel García López",
+        "fechaInicio": "2022-01-11"
+      },
+      "imagen": "pexels-zsolt-joo-15206030.jpg",
+      "nota": null,
+      "kilometraje": 85254
+    },
+    {
+      "id": "92",
+      "marca": "Citroën",
+      "modelo": "Berlingo",
+      "año": 2011,
+      "color": "Azul",
+      "matricula": "8719WLZ",
+      "precio_diario": 91,
+      "alquiler": {
+        "clienteNombre": "Laura Sánchez López",
+        "fechaInicio": "2022-12-08"
+      },
+      "imagen": "pexels-carlo-obrien-15450044.jpg",
+      "nota": null,
+      "kilometraje": 85650
+    },
+    {
+      "id": "93",
+      "marca": "Seat",
+      "modelo": "León",
+      "año": 2016,
+      "color": "Verde",
+      "matricula": "4696FHJ",
+      "precio_diario": 99,
+      "alquiler": {
+        "clienteNombre": "Antonio González Martínez",
+        "fechaInicio": "2023-09-11"
+      },
+      "imagen": "pexels-aidan-jarrett-687653.jpg",
+      "nota": "Perfecto estado",
+      "kilometraje": 41124
+    },
+    {
+      "id": "94",
+      "marca": "Opel",
+      "modelo": "Grandland",
+      "año": 2017,
+      "color": "Blanco",
+      "matricula": "8141CJM",
+      "precio_diario": 84,
+      "alquiler": {
+        "clienteNombre": "Manuel Martínez González",
+        "fechaInicio": "2023-08-18"
+      },
+      "imagen": "pexels-allie-feeley-15166495.jpg",
+      "nota": "Recién lavado",
+      "kilometraje": 11870
+    },
+    {
+      "id": "95",
+      "marca": "Peugeot",
+      "modelo": "208",
+      "año": 2019,
+      "color": "Negro",
+      "matricula": "3136SVY",
+      "precio_diario": 96,
+      "alquiler": null,
+      "imagen": "pexels-kris-lucas-3264504.jpg",
+      "nota": "Necesita reparación",
+      "kilometraje": 14809
+    },
+    {
+      "id": "96",
+      "marca": "Seat",
+      "modelo": "León",
+      "año": 2022,
+      "color": "Negro",
+      "matricula": "8451SFJ",
+      "precio_diario": 86,
+      "alquiler": null,
+      "imagen": "pexels-sevenstorm-juhaszimrus-575386.jpg",
+      "nota": "Necesita reparación",
+      "kilometraje": 85954
+    },
+    {
+      "id": "97",
+      "marca": "Seat",
+      "modelo": "León",
+      "año": 2015,
+      "color": "Blanco",
+      "matricula": "6074PWN",
+      "precio_diario": 30,
+      "alquiler": null,
+      "imagen": "pexels-alteredsnaps-15240805.jpg",
+      "nota": "Recién lavado",
+      "kilometraje": 74912
+    },
+    {
+      "id": "98",
+      "marca": "Volkswagen",
+      "modelo": "Polo",
+      "año": 2011,
+      "color": "Azul",
+      "matricula": "5394NNJ",
+      "precio_diario": 69,
+      "alquiler": {
+        "clienteNombre": "Antonio González Martínez",
+        "fechaInicio": "2023-06-18"
+      },
+      "imagen": "pexels-pixabay-210019.jpg",
+      "nota": "Necesita reparación",
+      "kilometraje": 22488
+    },
+    {
+      "id": "99",
+      "marca": "Citroën",
+      "modelo": "C4",
+      "año": 2022,
+      "color": "Blanco",
+      "matricula": "2843RGN",
+      "precio_diario": 35,
+      "alquiler": {
+        "clienteNombre": "Manuel Fernándeznull",
+        "fechaInicio": "2022-06-25"
+      },
+      "imagen": "pexels-matheus-bertelli-3007435.jpg",
+      "nota": null,
+      "kilometraje": 62722
+    },
+    {
+      "id": "100",
+      "marca": "Renault",
+      "modelo": "Mégane",
+      "año": 2013,
+      "color": "Azul",
+      "matricula": "4712YNV",
+      "precio_diario": 72,
+      "alquiler": null,
+      "imagen": "pexels-mike-bird-170811.jpg",
+      "nota": null,
+      "kilometraje": 14558
+    },
+    {
+      "id": "1a76",
+      "clienteNombre": "",
+      "fechaInicio": ""
+    }
+  ]
+}
