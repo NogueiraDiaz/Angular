@@ -2,8 +2,8 @@
   "coches": [
     {
       "id": "1",
-      "marca": "caca",
-      "modelo": "caca",
+      "marca": "loko",
+      "modelo": "loko",
       "año": 2003,
       "color": "Rojo",
       "matricula": "3674ZFJ",
@@ -15,7 +15,7 @@
       "imagen": "pexels-mert-erol-15422102.jpg",
       "nota": null,
       "kilometraje": 62133,
-      "anio": "1234"
+      "anio": "2024"
     },
     {
       "id": "2",
@@ -1513,11 +1513,6 @@
       "imagen": "pexels-mike-bird-170811.jpg",
       "nota": null,
       "kilometraje": 14558
-    },
-    {
-      "id": "1a76",
-      "clienteNombre": "",
-      "fechaInicio": ""
     }
   ]
 }

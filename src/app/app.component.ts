@@ -20,6 +20,7 @@ export class AppComponent implements OnInit {
     anio: ' '
   };
   mostrarFormulario: boolean = false;
+  mostrarFormulario2: boolean = false;
   nombre: string = '';
   fecha: string = '';
 
@@ -59,8 +60,52 @@ export class AppComponent implements OnInit {
 
   openEditForm(coche: any) {
     if (coche !== null) {
+
+      if (this.mostrarFormulario == true) {
+  
+        this.editedCoche = { ...coche };
+        this.mostrarFormulario = false;
+      }else{
+
+        if (this.mostrarFormulario2 == true) {
+          
+          this.mostrarFormulario2 = false
+          this.editedCoche = { ...coche };
+        }
+
+
       this.editedCoche = { ...coche };
       this.mostrarFormulario = true;
+
+      }
+
+
+      
+    }
+  }
+
+  openEditForm2(coche: any) {
+    if (coche !== null) {
+
+      if (this.mostrarFormulario2 == true) {
+  
+        this.editedCoche = { ...coche };
+        this.mostrarFormulario2 = false;
+      }else{
+
+        if (this.mostrarFormulario == true) {
+          
+          this.mostrarFormulario = false
+          this.editedCoche = { ...coche };
+        }
+
+      this.editedCoche = { ...coche };
+      this.mostrarFormulario2 = true;
+
+      }
+
+
+      
     }
   }
 

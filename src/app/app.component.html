@@ -33,9 +33,6 @@
           aria-labelledby="flush-headingOne"
           data-bs-parent="#accordionFlushExample"
         >
-          <div class="accordion-body">
-            This is the first item's accordion body.
-          </div>
         </div>
       </div>
       
@@ -43,20 +40,55 @@
     
 
   </header>
+  <div class="formularios">
+    <div class="container my-4" *ngIf="mostrarFormulario">
+      <h2>Editar Coche</h2>
+      <div class="mb-3">
+        <label for="marca" class="form-label">Marca</label>
+        <input type="text" class="form-control" id="marcaInput">
+      </div>
+      <div class="mb-3">
+        <label for="modelo" class="form-label">Modelo</label>
+        <input type="text" class="form-control" id="modeloInput">
+      </div>
+      <div class="mb-3">
+        <label for="año" class="form-label">Año</label>
+        <input type="number" class="form-control" id="anioInput">
+      </div>
+      <!-- Agrega los demás campos aquí -->
+      <button class="btn btn-primary" (click)="guardarCambios()">Guardar Cambios</button>
+    </div>
+
+    <div id="reservaForm" *ngIf="mostrarFormulario2">
+      <div class="container my-4">
+        <h2>Confirmar Reserva</h2>
+        <div class="mb-3">
+          <label for="nombre" class="form-label">Nombre:</label>
+          <input type="text" id="nombre" name="nombre" class="form-control" required>
+        </div>
+        <div class="mb-3">
+          <label for="fecha" class="form-label">Fecha:</label>
+          <input type="date" id="fecha" name="fecha" class="form-control" required>
+        </div>
+        <button class="btn btn-primary" (click)="confirmarReserva()">Confirmar Reserva</button>
+      </div>
+    </div>
+
+  </div>
   <main class="bg-body-tertiary p-1">
     <div class="container" id="contenedor">
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-3 mt-4 align-items-stretch">
         <!-- Tarjetas repetidas para cada coche -->
         <div class="col" *ngFor="let coche of getCoches()">
-          <div class="card mx-auto bg bg-warning-subtle" style="height: 260px; width: 250px;">
+          <div class="card mx-auto bg bg-success-subtle" style="height: 260px; width: 250px;">
             <img [src]="'../assets/img/' + coche.imagen" class="card-img-top">
             <div class="card-body">
               <h5 class="text-primary m-0">{{ coche.modelo }}</h5>
               <p class="text-secondary m-0">{{ coche.marca }}</p>
               <p class="m-0">{{ coche.matricula }}</p>
               <div class="d-flex mt-2">
-                <a href="#" class="text-secondary text-decoration-none" (click)="openEditForm(coche)">Reservar</a>
-                <a href="#" class="text-secondary text-decoration-none" (click)="openEditForm(coche)">Editar</a>
+                <a href="#" class="text-secondary text-decoration-none" (click)="openEditForm2(coche)">Reservar</a>
+                <a href="#" class="text-secondary text-decoration-none mx-3" (click)="openEditForm(coche)">Editar</a>
               </div>
             </div>
           </div>
@@ -82,44 +114,6 @@
       </nav>
     </div>
   </main>
-  
-
-
-  <footer>
-    <div class="container mt-4" *ngIf="mostrarFormulario">
-      <h2>Editar Coche</h2>
-      <div class="mb-3">
-        <label for="marca" class="form-label">Marca</label>
-        <input type="text" class="form-control" id="marcaInput">
-      </div>
-      <div class="mb-3">
-        <label for="modelo" class="form-label">Modelo</label>
-        <input type="text" class="form-control" id="modeloInput">
-      </div>
-      <div class="mb-3">
-        <label for="año" class="form-label">Año</label>
-        <input type="number" class="form-control" id="anioInput">
-      </div>
-      <!-- Agrega los demás campos aquí -->
-      <button class="btn btn-primary" (click)="guardarCambios()">Guardar Cambios</button>
-    </div>
-
-    <div id="reservaForm" *ngIf="mostrarFormulario">
-      <div class="container mt-4">
-        <h2>Confirmar Reserva</h2>
-        <div class="mb-3">
-          <label for="nombre" class="form-label">Nombre:</label>
-          <input type="text" id="nombre" name="nombre" class="form-control" required>
-        </div>
-        <div class="mb-3">
-          <label for="fecha" class="form-label">Fecha:</label>
-          <input type="date" id="fecha" name="fecha" class="form-control" required>
-        </div>
-        <button class="btn btn-primary" (click)="confirmarReserva()">Confirmar Reserva</button>
-      </div>
-    </div>
-
-  </footer>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
     integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
     crossorigin="anonymous"></script>
