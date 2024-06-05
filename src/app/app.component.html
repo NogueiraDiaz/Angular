@@ -128,47 +128,59 @@
   </div>
 
   <div class="container my-4">
-    <h2>Filtros</h2>
-    <div class="row">
-      <div class="col-md-2">
-        <label for="precioMin">Precio Min</label>
-        <input type="number" id="precioMin" class="form-control" [(ngModel)]="filters.precioMin">
-      </div>
-      <div class="col-md-2">
-        <label for="precioMax">Precio Max</label>
-        <input type="number" id="precioMax" class="form-control" [(ngModel)]="filters.precioMax">
-      </div>
-      <div class="col-md-2">
-        <label for="marca">Marca</label>
-        <select id="marca" class="form-control" [(ngModel)]="filters.marca">
-          <option value="">Todas</option>
-          <option *ngFor="let option of marcaOptions" [value]="option">{{ option }}</option>
-        </select>
-      </div>
-
-      <div class="col-md-2">
-        <label for="color">Color</label>
-        <select id="color" class="form-control" [(ngModel)]="filters.color">
-          <option value="">Todos</option>
-          <option *ngFor="let option of colorOptions" [value]="option">{{ option }}</option>
-        </select>
-      </div>
-
-      <div class="col-md-2">
-        <label for="estadoAlquiler">Estado de Alquiler</label>
-        <select id="estadoAlquiler" class="form-control" [(ngModel)]="filters.estadoAlquiler">
-          <option value="">Todos</option>
-          <option *ngFor="let option of estadoAlquilerOptions" [value]="option">{{ option }}</option>
-        </select>
-      </div>
-
-      <div class="col-md-2">
-        <label for="año">Año</label>
-        <input type="number" id="año" class="form-control" [(ngModel)]="filters['año']">
-      </div>
-      <div class="col-md-2">
-        <label for="clienteNombre">Nombre del Cliente</label>
-        <input type="text" id="clienteNombre" class="form-control" [(ngModel)]="filters.clienteNombre">
+    
+    <div class="accordion" id="filtroAccordion">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingFilters">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFilters"
+            aria-expanded="true" aria-controls="collapseFilters">
+            Filtros
+          </button>
+        </h2>
+        <div id="collapseFilters" class="accordion-collapse collapse show" aria-labelledby="headingFilters"
+          data-bs-parent="#filtroAccordion">
+          <div class="accordion-body">
+            <div class="row">
+              <div class="col-md-2">
+                <label for="precioMin">Precio Min</label>
+                <input type="number" id="precioMin" class="form-control" [(ngModel)]="filters.precioMin">
+              </div>
+              <div class="col-md-2">
+                <label for="precioMax">Precio Max</label>
+                <input type="number" id="precioMax" class="form-control" [(ngModel)]="filters.precioMax">
+              </div>
+              <div class="col-md-2">
+                <label for="marca">Marca</label>
+                <select id="marca" class="form-control" [(ngModel)]="filters.marca">
+                  <option value="">Todas</option>
+                  <option *ngFor="let option of marcaOptions" [value]="option">{{ option }}</option>
+                </select>
+              </div>
+              <div class="col-md-2">
+                <label for="color">Color</label>
+                <select id="color" class="form-control" [(ngModel)]="filters.color">
+                  <option value="">Todos</option>
+                  <option *ngFor="let option of colorOptions" [value]="option">{{ option }}</option>
+                </select>
+              </div>
+              <div class="col-md-2">
+                <label for="estadoAlquiler">Estado de Alquiler</label>
+                <select id="estadoAlquiler" class="form-control" [(ngModel)]="filters.estadoAlquiler">
+                  <option value="">Todos</option>
+                  <option *ngFor="let option of estadoAlquilerOptions" [value]="option">{{ option }}</option>
+                </select>
+              </div>
+              <div class="col-md-2">
+                <label for="año">Año</label>
+                <input type="number" id="año" class="form-control" [(ngModel)]="filters['año']">
+              </div>
+              <div class="col-md-2">
+                <label for="clienteNombre">Nombre del Cliente</label>
+                <input type="text" id="clienteNombre" class="form-control" [(ngModel)]="filters.clienteNombre">
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
