@@ -17,8 +17,10 @@ export class AppComponent implements OnInit {
   editedCoche: any = { marca: '', modelo: '', anio: '' };
   mostrarFormulario: boolean = false;
   mostrarFormulario2: boolean = false;
+  mostrarFormulario3: boolean = false;
   nombre: string = '';
   fecha: string = '';
+  fechaFinal: string = '';
   estadoAlquilerOptions: string[] = ['Sí', 'No']; // Opciones de estado del alquiler
   marcaOptions: string[] = [];
   colorOptions: string[] = [];
@@ -86,38 +88,142 @@ export class AppComponent implements OnInit {
   }
 
   getTotalPages(): number {
-  return Math.ceil(this.getCochesFiltrados().length / this.itemsPerPage);
-}
+    return Math.ceil(this.getCochesFiltrados().length / this.itemsPerPage);
+  }
 
   openEditForm(coche: any) {
-    if (coche !== null) {
-      if (this.mostrarFormulario) {
-        this.editedCoche = { ...coche };
-        this.mostrarFormulario = false;
-      } else {
-        if (this.mostrarFormulario2) {
-          this.mostrarFormulario2 = false;
-        }
-        this.editedCoche = { ...coche };
-        this.mostrarFormulario = true;
+    if (this.mostrarFormulario) {
+      this.editedCoche = { ...coche };
+      this.mostrarFormulario = false;
+    } else {
+      if (this.mostrarFormulario2 || this.mostrarFormulario3) {
+        this.mostrarFormulario2 = false;
+        this.mostrarFormulario3 = false;
       }
+      this.editedCoche = { ...coche };
+      this.mostrarFormulario = true;
+      console.log(this.editedCoche.matricula)
     }
+
   }
 
   openEditForm2(coche: any) {
-    if (coche !== null) {
-      if (this.mostrarFormulario2) {
-        this.editedCoche = { ...coche };
-        this.mostrarFormulario2 = false;
-      } else {
-        if (this.mostrarFormulario) {
-          this.mostrarFormulario = false;
-        }
-        this.editedCoche = { ...coche };
-        this.mostrarFormulario2 = true;
+    if (this.mostrarFormulario2) {
+      this.editedCoche = { ...coche };
+      this.mostrarFormulario2 = false;
+    } else {
+      if (this.mostrarFormulario || this.mostrarFormulario3) {
+        this.mostrarFormulario = false;
+        this.mostrarFormulario3 = false;
       }
+      this.editedCoche = { ...coche };
+      this.mostrarFormulario2 = true;
     }
   }
+
+  openEditForm3(coche: any) {
+    if (this.mostrarFormulario3) {
+      this.editedCoche = { ...coche };
+      this.mostrarFormulario3 = false;
+    } else {
+      if (this.mostrarFormulario || this.mostrarFormulario2) {
+        this.mostrarFormulario = false;
+        this.mostrarFormulario2 = false;
+      }
+      this.editedCoche = { ...coche };
+      this.mostrarFormulario3 = true;
+    }
+  }
+
+  obtenerFechaHoy(): string {
+    const today = new Date();
+    const dd = String(today.getDate()).padStart(2, '0');
+    const mm = String(today.getMonth() + 1).padStart(2, '0'); // Enero es 0
+    const yyyy = today.getFullYear();
+    return `${yyyy}-${mm}-${dd}`;
+  }
+
+  confirmarReserva() {
+    const cocheId = this.editedCoche.id; // Obtener el ID del coche
+    const nombreCliente = (<HTMLInputElement>document.getElementById('nombre')).value;
+    const fechaInicio = (<HTMLInputElement>document.getElementById('fecha')).value;
+    this.editedCoche.alquiler = {
+      clienteNombre: nombreCliente,
+      fechaInicio: fechaInicio
+    }
+  
+    // Lógica para confirmar el alquiler del vehículo
+    // Aquí debes enviar los datos a tu backend para actualizar el coche
+  
+    // Por ejemplo:
+    fetch(`http://localhost:3000/coches/${cocheId}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(this.editedCoche)
+    })
+    .then(response => {
+      if (response.ok) {
+        console.log('Alquiler confirmado correctamente!');
+        this.fetchCoches(); // Volver a cargar la lista de coches después de confirmar el alquiler
+        this.mostrarFormulario2 = false; // Ocultar el formulario
+      } else {
+        console.error('Error al confirmar el alquiler.');
+      }
+    })
+    .catch(error => {
+      console.error('Error al confirmar el alquiler:', error);
+    });
+  }
+  
+
+  confirmarDevolucion() {
+    const cocheId = this.editedCoche.id; // Obtener el ID del coche
+    this.editedCoche.alquiler = null;
+    const fechaFinalString = (<HTMLInputElement>document.getElementById('fechaFinal')).value;
+    const fechaFinal = new Date(fechaFinalString);
+
+    // Lógica para confirmar la devolución del vehículo
+    // Aquí debes enviar los datos a tu backend para actualizar la reserva
+
+    // Por ejemplo:
+    fetch(`http://localhost:3000/coches/${cocheId}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(this.editedCoche) // Establecer alquiler a null y enviar la fecha final
+    })
+      .then(response => {
+        if (response.ok) {
+          console.log('¡Devolución confirmada correctamente!');
+          this.calcularMontoDevolucion(cocheId, fechaFinal); // Calcular el monto adeudado
+          this.fetchCoches(); // Volver a cargar la lista de coches después de confirmar la devolución
+          this.mostrarFormulario3 = false; // Ocultar el formulario
+        } else {
+          console.error('Error al confirmar la devolución.');
+        }
+      })
+      .catch(error => {
+        console.error('Error al confirmar la devolución:', error);
+      });
+  }
+
+  calcularMontoDevolucion(cocheId: number, fechaFinal: Date) {
+    const coche = this.coches.find(coche => coche.id === cocheId);
+    if (coche && coche.alquiler && coche.alquiler.fechaInicio) {
+      const fechaInicio = new Date(coche.alquiler.fechaInicio);
+      const diasAlquilados = Math.ceil((fechaFinal.getTime() - fechaInicio.getTime()) / (1000 * 60 * 60 * 24)); // Calcular la diferencia en días
+      const montoTotal = diasAlquilados * coche.precio_diario; // Calcular el monto total adeudado
+      alert(`El cliente ${coche.alquiler.clienteNombre} tiene un monto a pagar de: ${montoTotal}€`);
+      // Aquí podrías mostrar el monto total en la interfaz de usuario o realizar cualquier otra acción necesaria
+    } else {
+      console.error('No se pudo calcular el monto de devolución porque los datos del alquiler no están completos.');
+    }
+  }
+
+
 
   guardarCambios() {
     this.editedCoche.marca = (<HTMLInputElement>document.getElementById('marca')).value;
@@ -145,44 +251,25 @@ export class AppComponent implements OnInit {
       });
   }
 
-  reservar(coche: any) {
-    if (!coche.alquiler) {
-      this.mostrarFormulario = true;
-      this.nombre = (<HTMLInputElement>document.getElementById('nombre')).value;
-      this.fecha = (<HTMLInputElement>document.getElementById('fecha')).value;
+
+
+  eliminarCoche(id: number) {
+    if (confirm("¿Estás seguro de que quieres eliminar este coche?")) {
+      fetch(`http://localhost:3000/coches/${id}`, {
+        method: 'DELETE',
+      })
+        .then(response => {
+          if (response.ok) {
+            console.log('¡Coche eliminado correctamente!');
+            this.fetchCoches(); // Volver a cargar la lista de coches después de eliminar
+          } else {
+            console.error('Error al eliminar el coche.');
+          }
+        })
+        .catch(error => {
+          console.error('Error al eliminar el coche:', error);
+        });
     }
   }
 
-  confirmarReserva() {
-    const nuevaReserva = {
-      clienteNombre: this.nombre,
-      fechaInicio: this.fecha,
-    };
-
-    fetch('http://localhost:3000/coches', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(nuevaReserva),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log('Reserva almacenada:', data);
-        this.nombre = '';
-        this.fecha = '';
-        this.mostrarFormulario = false;
-      })
-      .catch((error) => {
-        console.error('Error al almacenar la reserva:', error);
-      });
-  }
-
-  updateNombre(value: string) {
-    this.nombre = value;
-  }
-
-  updateFecha(value: string) {
-    this.fecha = value;
-  }
 }

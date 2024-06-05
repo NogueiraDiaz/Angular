@@ -1,23 +1,6 @@
 {
   "coches": [
     {
-      "id": "1",
-      "marca": "loko",
-      "modelo": "loko",
-      "año": 2003,
-      "color": "Rojo",
-      "matricula": "3674ZFJ",
-      "precio_diario": 70,
-      "alquiler": {
-        "clienteNombre": "Isabel Martínez Martínez",
-        "fechaInicio": "2023-01-14"
-      },
-      "imagen": "pexels-mert-erol-15422102.jpg",
-      "nota": null,
-      "kilometraje": 62133,
-      "anio": "2024"
-    },
-    {
       "id": "2",
       "marca": "Renault",
       "modelo": "Clio",
@@ -96,19 +79,6 @@
       "imagen": "pexels-ahmed-zaki-15330936.jpg",
       "nota": "Algunos rasguños",
       "kilometraje": 45512
-    },
-    {
-      "id": "7",
-      "marca": "Citroën",
-      "modelo": "Berlingo",
-      "año": 2015,
-      "color": "Azul",
-      "matricula": "3458DCY",
-      "precio_diario": 63,
-      "alquiler": null,
-      "imagen": "pexels-alteredsnaps-15240986.jpg",
-      "nota": "Necesita reparación",
-      "kilometraje": 72253
     },
     {
       "id": "8",
@@ -1514,6 +1484,5 @@
       "nota": null,
       "kilometraje": 14558
     }
-
   ]
 }
