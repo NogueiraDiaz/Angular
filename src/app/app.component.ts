@@ -1,12 +1,12 @@
-// @ts-ignore
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule],
   standalone: true,
 })
 export class AppComponent implements OnInit {
@@ -14,15 +14,24 @@ export class AppComponent implements OnInit {
   coches: any[] = [];
   currentPage: number = 1;
   itemsPerPage: number = 8;
-  editedCoche: any = {
-    marca: ' ',
-    modelo: ' ',
-    anio: ' '
-  };
+  editedCoche: any = { marca: '', modelo: '', anio: '' };
   mostrarFormulario: boolean = false;
   mostrarFormulario2: boolean = false;
   nombre: string = '';
   fecha: string = '';
+  estadoAlquilerOptions: string[] = ['Sí', 'No']; // Opciones de estado del alquiler
+  marcaOptions: string[] = [];
+  colorOptions: string[] = [];
+
+  filters: any = {
+    precioMin: 0,
+    precioMax: 1000,
+    color: '',
+    marca: '',
+    anio: '',
+    estadoAlquiler: '',
+    clienteNombre: ''
+  };
 
   ngOnInit() {
     this.fetchCoches();
@@ -33,10 +42,17 @@ export class AppComponent implements OnInit {
       .then((response) => response.json())
       .then((data) => {
         this.coches = data;
+        this.extractUniqueValues();
       })
       .catch((error) => {
         console.error('Error al obtener datos de coches:', error);
       });
+  }
+
+  extractUniqueValues() {
+    // Extraer valores únicos para marca y color
+    this.marcaOptions = Array.from(new Set(this.coches.map(coche => coche.marca)));
+    this.colorOptions = Array.from(new Set(this.coches.map(coche => coche.color)));
   }
 
   cambioPagina(pageNumber: number) {
@@ -46,7 +62,22 @@ export class AppComponent implements OnInit {
   getCoches(): any[] {
     const startIndex = (this.currentPage - 1) * this.itemsPerPage;
     const endIndex = startIndex + this.itemsPerPage;
-    return this.coches.slice(startIndex, endIndex);
+    return this.getCochesFiltrados().slice(startIndex, endIndex);
+  }
+
+  getCochesFiltrados(): any[] {
+    const filteredCoches = this.coches.filter(coche => {
+      return (
+        coche.precio_diario >= this.filters.precioMin &&
+        coche.precio_diario <= this.filters.precioMax &&
+        (this.filters.color === '' || coche.color === this.filters.color) &&
+        (this.filters.marca === '' || coche.marca === this.filters.marca) &&
+        (this.filters.anio === '' || coche.anio === this.filters.anio) &&
+        (this.filters.estadoAlquiler === '' || (this.filters.estadoAlquiler === 'Sí' && coche.alquiler) || (this.filters.estadoAlquiler === 'No' && !coche.alquiler)) &&
+        (this.filters.clienteNombre === '' || (coche.clienteNombre && coche.clienteNombre.includes(this.filters.clienteNombre)))
+      );
+    });
+    return filteredCoches;
   }
 
   getPaginationArray(): number[] {
@@ -55,64 +86,43 @@ export class AppComponent implements OnInit {
   }
 
   getTotalPages(): number {
-    return Math.ceil(this.coches.length / this.itemsPerPage);
-  }
+  return Math.ceil(this.getCochesFiltrados().length / this.itemsPerPage);
+}
 
   openEditForm(coche: any) {
     if (coche !== null) {
-
-      if (this.mostrarFormulario == true) {
-  
+      if (this.mostrarFormulario) {
         this.editedCoche = { ...coche };
         this.mostrarFormulario = false;
-      }else{
-
-        if (this.mostrarFormulario2 == true) {
-          
-          this.mostrarFormulario2 = false
-          this.editedCoche = { ...coche };
+      } else {
+        if (this.mostrarFormulario2) {
+          this.mostrarFormulario2 = false;
         }
-
-
-      this.editedCoche = { ...coche };
-      this.mostrarFormulario = true;
-
+        this.editedCoche = { ...coche };
+        this.mostrarFormulario = true;
       }
-
-
-      
     }
   }
 
   openEditForm2(coche: any) {
     if (coche !== null) {
-
-      if (this.mostrarFormulario2 == true) {
-  
+      if (this.mostrarFormulario2) {
         this.editedCoche = { ...coche };
         this.mostrarFormulario2 = false;
-      }else{
-
-        if (this.mostrarFormulario == true) {
-          
-          this.mostrarFormulario = false
-          this.editedCoche = { ...coche };
+      } else {
+        if (this.mostrarFormulario) {
+          this.mostrarFormulario = false;
         }
-
-      this.editedCoche = { ...coche };
-      this.mostrarFormulario2 = true;
-
+        this.editedCoche = { ...coche };
+        this.mostrarFormulario2 = true;
       }
-
-
-      
     }
   }
 
   guardarCambios() {
-    this.editedCoche.marca = (<HTMLInputElement>document.getElementById('marcaInput')).value;
-    this.editedCoche.modelo = (<HTMLInputElement>document.getElementById('modeloInput')).value;
-    this.editedCoche.anio = (<HTMLInputElement>document.getElementById('anioInput')).value;
+    this.editedCoche.marca = (<HTMLInputElement>document.getElementById('marca')).value;
+    this.editedCoche.modelo = (<HTMLInputElement>document.getElementById('modelo')).value;
+    this.editedCoche.anio = (<HTMLInputElement>document.getElementById('anio')).value;
 
     fetch(`http://localhost:3000/coches/${this.editedCoche.id}`, {
       method: 'PUT',
@@ -175,5 +185,4 @@ export class AppComponent implements OnInit {
   updateFecha(value: string) {
     this.fecha = value;
   }
-
 }
