@@ -2,9 +2,9 @@
   "coches": [
     {
       "id": "2",
-      "marca": "Renault",
-      "modelo": "Clio",
-      "año": 2008,
+      "marca": "Golfero",
+      "modelo": "Loko",
+      "año": "2121",
       "color": "Verde",
       "matricula": "8788WXP",
       "precio_diario": 85,
@@ -15,22 +15,6 @@
       "imagen": "pexels-luca-istrate-15469368.jpg",
       "nota": "Algunos rasguños",
       "kilometraje": 60746
-    },
-    {
-      "id": "3",
-      "marca": "Seat",
-      "modelo": "Ibiza",
-      "año": 2019,
-      "color": "Negro",
-      "matricula": "9906LMZ",
-      "precio_diario": 52,
-      "alquiler": {
-        "clienteNombre": "Antonio González Martínez",
-        "fechaInicio": "2023-04-15"
-      },
-      "imagen": "pexels-liza-lova-2739286.jpg",
-      "nota": "Interior impecable",
-      "kilometraje": 37411
     },
     {
       "id": "4",
@@ -1497,6 +1481,19 @@
       "nota": "Muy Guapo",
       "kilometraje": "10000",
       "anio": "2030"
+    },
+    {
+      "id": "185f",
+      "marca": "coala",
+      "modelo": "cdcd",
+      "año": "-1",
+      "color": "pokoyo",
+      "matricula": "PO7078BS",
+      "precio_diario": "23",
+      "alquiler": null,
+      "imagen": "pexels-adrian-dorobantu-2127733.jpg",
+      "nota": "",
+      "kilometraje": "23231"
     }
   ]
 }
