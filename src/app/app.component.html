@@ -5,25 +5,68 @@
   <title>Title</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
 </head>
 
 <body>
-  <header class="">
-    <div class="accordion accordion-flush" id="accordionFlushExample">
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="flush-headingOne">
-          <button class="accordion-button collapsed  bg-dark text-light fs-4" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="true" aria-controls="flush-collapseOne">
-            Coches DAW
-          </button>
-        </h2>
-        <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-        </div>
-      </div>
+  <header class="bg-dark text-light py-3">
+    <div class="container d-flex justify-content-between align-items-center">
+      <h1 class="fs-4 mb-0"><a href="javascript:void(0)" onclick="location.href=location.href" class="text-decoration-none text-light">Coches DAW</a>
+      </h1>
+      <button class="btn btn-outline-light" (click)="openEditForm4(null)" >+ Añadir coche </button>
     </div>
   </header>
-
   <div class="formularios">
+
+    <div id="reservaForm" *ngIf="mostrarFormulario4">
+      <div class="container bg-body-secondary my-4 rounded">
+        <h2 class="pt-2">Insertar Nuevo Vehículo</h2>
+        <div class="mb-3">
+          <label for="marca" class="form-label">Marca:</label>
+          <input type="text" id="marca" name="marca" class="form-control" [(ngModel)]="nuevoCoche.marca" required>
+        </div>
+        <div class="mb-3">
+          <label for="modelo" class="form-label">Modelo:</label>
+          <input type="text" id="modelo" name="modelo" class="form-control" [(ngModel)]="nuevoCoche.modelo" required>
+        </div>
+        <div class="mb-3">
+          <label for="año" class="form-label">Año:</label>
+          <input type="number" id="año" name="año" class="form-control" [(ngModel)]="nuevoCoche['año']" required>
+        </div>
+        <div class="mb-3">
+          <label for="color" class="form-label">Color:</label>
+          <input type="text" id="color" name="color" class="form-control" [(ngModel)]="nuevoCoche.color" required>
+        </div>
+        <div class="mb-3">
+          <label for="matricula" class="form-label">Matrícula:</label>
+          <input type="text" id="matricula" name="matricula" class="form-control" [(ngModel)]="nuevoCoche.matricula"
+            required>
+        </div>
+        <div class="mb-3">
+          <label for="precio_diario" class="form-label">Precio Diario:</label>
+          <input type="number" id="precio_diario" name="precio_diario" class="form-control"
+            [(ngModel)]="nuevoCoche.precio_diario" required>
+        </div>
+        <div class="mb-3">
+          <label for="imagen" class="form-label">Imagen:</label>
+          <input type="text" id="imagen" name="imagen" class="form-control" [(ngModel)]="nuevoCoche.imagen" required>
+        </div>
+        <div class="mb-3">
+          <label for="nota" class="form-label">Informacion Adicional:</label>
+          <input type="text" id="nota" name="nota" class="form-control" [(ngModel)]="nuevoCoche.nota">
+        </div>
+        <div class="mb-3">
+          <label for="kilometraje" class="form-label">Kilometraje:</label>
+          <input type="number" id="kilometraje" name="kilometraje" class="form-control"
+            [(ngModel)]="nuevoCoche.kilometraje">
+        </div>
+        <button class="btn btn-primary mb-3" (click)="insertarCoche()">Insertar Coche</button>
+        <a href="#" class="text-secondary text-decoration-none mx-3" (click)="openEditForm4(null)">Ocultar</a>
+      </div>
+    </div>
+
+
     <div id="reservaForm" *ngIf="mostrarFormulario">
       <div class="container bg-body-secondary my-4 rounded">
         <h2 class="pt-2">Editar Vehiculo</h2>
@@ -36,10 +79,10 @@
           <input type="text" id="modelo" name="modelo" class="form-control" required>
         </div>
         <div class="mb-3">
-          <label for="anio" class="form-label">Año:</label>
-          <input type="year" id="anio" name="anio" class="form-control" required>
+          <label for="año" class="form-label">Año:</label>
+          <input type="year" id="año" name="año" class="form-control" required>
         </div>
-        <button class="btn btn-primary mb-3" (click)="guardarCambios()">Guardar Cambios</button>
+        <button class="btn btn-primary mb-3" (click)="editarCoche()">Guardar Cambios</button>
         <a href="#" class="text-secondary text-decoration-none mx-3" (click)="openEditForm(null)">Ocultar</a>
       </div>
     </div>
@@ -55,7 +98,7 @@
           <label for="fecha" class="form-label">Fecha:</label>
           <input type="date" id="fecha" name="fecha" class="form-control" required>
         </div>
-        <button class="btn btn-primary mb-3" (click)="confirmarReserva()">Alquilar</button>
+        <button class="btn btn-primary mb-3" (click)="alquilarCoche()">Alquilar</button>
         <a href="#" class="text-secondary text-decoration-none mx-3" (click)="openEditForm2(null)">Ocultar</a>
       </div>
     </div>
@@ -65,11 +108,13 @@
         <h2 class="pt-2">Devolver Vehiculo</h2>
         <div class="mb-3">
           <label for="nombreCliente" class="form-label">Nombre del Cliente que tiene el vehiculo:</label>
-          <input type="text" id="nombreCliente" name="nombreCliente" class="form-control" [value]="editedCoche.alquiler ? editedCoche.alquiler.clienteNombre : 'Anónimo'" disabled>
+          <input type="text" id="nombreCliente" name="nombreCliente" class="form-control"
+            [value]="editedCoche.alquiler ? editedCoche.alquiler.clienteNombre : 'Anónimo'" disabled>
         </div>
         <div class="mb-3">
           <label for="fechaInicio" class="form-label">Fecha Inicial del Alquiler:</label>
-          <input type="text" id="fechaInicio" name="fechaInicio" class="form-control" [value]="editedCoche.alquiler ? editedCoche.alquiler.fechaInicio : obtenerFechaHoy()" disabled>
+          <input type="text" id="fechaInicio" name="fechaInicio" class="form-control"
+            [value]="editedCoche.alquiler ? editedCoche.alquiler.fechaInicio : obtenerFechaHoy()" disabled>
         </div>
         <div class="mb-3">
           <label for="fechaFinal" class="form-label">Fecha Finalización:</label>
@@ -79,7 +124,7 @@
         <a href="#" class="text-secondary text-decoration-none mx-3" (click)="openEditForm3(null)">Ocultar</a>
       </div>
     </div>
-    
+
   </div>
 
   <div class="container my-4">
@@ -100,7 +145,7 @@
           <option *ngFor="let option of marcaOptions" [value]="option">{{ option }}</option>
         </select>
       </div>
-      
+
       <div class="col-md-2">
         <label for="color">Color</label>
         <select id="color" class="form-control" [(ngModel)]="filters.color">
@@ -108,7 +153,7 @@
           <option *ngFor="let option of colorOptions" [value]="option">{{ option }}</option>
         </select>
       </div>
-      
+
       <div class="col-md-2">
         <label for="estadoAlquiler">Estado de Alquiler</label>
         <select id="estadoAlquiler" class="form-control" [(ngModel)]="filters.estadoAlquiler">
@@ -116,10 +161,10 @@
           <option *ngFor="let option of estadoAlquilerOptions" [value]="option">{{ option }}</option>
         </select>
       </div>
-      
+
       <div class="col-md-2">
-        <label for="anio">Año</label>
-        <input type="number" id="anio" class="form-control" [(ngModel)]="filters['año']">
+        <label for="año">Año</label>
+        <input type="number" id="año" class="form-control" [(ngModel)]="filters['año']">
       </div>
       <div class="col-md-2">
         <label for="clienteNombre">Nombre del Cliente</label>
@@ -132,27 +177,28 @@
     <div class="container" id="contenedor">
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-3 mt-4 align-items-stretch">
         <div class="col" *ngFor="let coche of getCoches()">
-          <div [ngClass]="{'bg-success-subtle': !coche.alquiler, 'bg-danger-subtle': coche.alquiler}" class="card mx-auto" style="height: 365px; width: 300px;">
+          <div [ngClass]="{'bg-success-subtle': !coche.alquiler, 'bg-danger-subtle': coche.alquiler}"
+            class="card mx-auto" style="height: 365px; width: 300px;">
             <img [src]="'../assets/img/' + coche.imagen" style="height: 175px; object-fit: cover;">
             <div class="card-body">
-              <h5 class="text-primary m-0">{{ coche.modelo }}  ({{ coche['año'] }}) </h5>
+              <h5 class="text-primary m-0">{{ coche.modelo }} ({{ coche['año'] }}) </h5>
               <p class="text-secondary m-0">{{ coche.marca }} ({{ coche.color }})</p>
               <p class="m-0">{{ coche.matricula }}</p>
               <p class="m-0">{{ coche.nota || 'Sin Anotaciones' }}</p>
 
-                <p class="mb-2"><span class="fw-bold">{{ coche.precio_diario | currency: 'EUR' }}</span>/día</p>
-                <ng-container *ngIf="!coche.alquiler">
-                  <a href="#" (click)="openEditForm2(coche)" class="btn btn-sm btn-outline-primary">Alquilar</a>                
-                </ng-container>
-                <ng-container *ngIf="coche.alquiler">
-                  <button (click)="openEditForm3(coche)" class="btn btn-sm btn-outline-success">Devolver</button>
-                </ng-container>
-                  <a href="#" (click)="openEditForm(coche)" class="btn btn-sm btn-outline-warning mx-2">Editar</a>
+              <p class="mb-2"><span class="fw-bold">{{ coche.precio_diario | currency: 'EUR' }}</span>/día</p>
+              <ng-container *ngIf="!coche.alquiler">
+                <a href="#" (click)="openEditForm2(coche)" class="btn btn-sm btn-outline-primary">Alquilar</a>
+              </ng-container>
+              <ng-container *ngIf="coche.alquiler">
+                <button (click)="openEditForm3(coche)" class="btn btn-sm btn-outline-success">Devolver</button>
+              </ng-container>
+              <a href="#" (click)="openEditForm(coche)" class="btn btn-sm btn-outline-warning mx-2">Editar</a>
 
-                  <ng-container *ngIf="!coche.alquiler">
-                    <a href="#" (click)="eliminarCoche(coche.id)" class="btn btn-sm btn-outline-danger ">Eliminar</a>
-                  </ng-container>
-                
+              <ng-container *ngIf="!coche.alquiler">
+                <a href="#" (click)="eliminarCoche(coche.id)" class="btn btn-sm btn-outline-danger ">Eliminar</a>
+              </ng-container>
+
             </div>
           </div>
         </div>
@@ -193,8 +239,10 @@
     </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gybBogGz5GujpmbcE1lZZC/PrkPY7wj2nq6B7b8Mf0f4NPk8E"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0ey1bVfG5moMKNpG5VdCPnpk91F0dTLRV9aQ8mT1brbTVPpK8ePqsK0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz4fnFO9gybBogGz5GujpmbcE1lZZC/PrkPY7wj2nq6B7b8Mf0f4NPk8E"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+    integrity="sha384-cn7l7gDp0ey1bVfG5moMKNpG5VdCPnpk91F0dTLRV9aQ8mT1brbTVPpK8ePqsK0"></script>
 </body>
 
 </html>

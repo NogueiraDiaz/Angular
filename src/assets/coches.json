@@ -1483,6 +1483,20 @@
       "imagen": "pexels-mike-bird-170811.jpg",
       "nota": null,
       "kilometraje": 14558
+    },
+    {
+      "id": "e7f7",
+      "marca": "Lokotron",
+      "modelo": "Loko",
+      "año": "2025",
+      "color": "Negro",
+      "matricula": "PO7078BS",
+      "precio_diario": "1000",
+      "alquiler": null,
+      "imagen": "pexels-adrian-dorobantu-2127733.jpg",
+      "nota": "Muy Guapo",
+      "kilometraje": "10000",
+      "anio": "2030"
     }
   ]
 }
