@@ -22,7 +22,7 @@ export class AppComponent implements OnInit {
   nombre: string = '';
   fecha: string = '';
   fechaFinal: string = '';
-  estadoAlquilerOptions: string[] = ['Sí', 'No']; // Opciones de estado del alquiler
+  estadoAlquilerOptions: string[] = ['Sí', 'No'];
   marcaOptions: string[] = [];
   colorOptions: string[] = [];
 
@@ -66,7 +66,6 @@ export class AppComponent implements OnInit {
   }
 
   extractUniqueValues() {
-    // Extraer valores únicos para marca y color
     this.marcaOptions = Array.from(new Set(this.coches.map(coche => coche.marca)));
     this.colorOptions = Array.from(new Set(this.coches.map(coche => coche.color)));
   }
@@ -170,7 +169,7 @@ export class AppComponent implements OnInit {
   obtenerFechaHoy(): string {
     const today = new Date();
     const dd = String(today.getDate()).padStart(2, '0');
-    const mm = String(today.getMonth() + 1).padStart(2, '0'); // Enero es 0
+    const mm = String(today.getMonth() + 1).padStart(2, '0'); 
     const yyyy = today.getFullYear();
     return `${yyyy}-${mm}-${dd}`;
   }
@@ -183,19 +182,15 @@ export class AppComponent implements OnInit {
 
     if (!nombreCliente || !fechaInicio) {
       alert('Por favor, complete todos los campos requeridos.');
-      return; // Detener la ejecución si los campos requeridos no están llenos
+      return;
   }
 
-    const cocheId = this.editedCoche.id; // Obtener el ID del coche
+    const cocheId = this.editedCoche.id;
     this.editedCoche.alquiler = {
       clienteNombre: nombreCliente,
       fechaInicio: fechaInicio
     }
-  
-    // Lógica para confirmar el alquiler del vehículo
-    // Aquí debes enviar los datos a tu backend para actualizar el coche
-  
-    // Por ejemplo:
+
     fetch(`http://localhost:3000/coches/${cocheId}`, {
       method: 'PUT',
       headers: {
@@ -206,8 +201,8 @@ export class AppComponent implements OnInit {
     .then(response => {
       if (response.ok) {
         console.log('Alquiler confirmado correctamente!');
-        this.fetchCoches(); // Volver a cargar la lista de coches después de confirmar el alquiler
-        this.mostrarFormulario2 = false; // Ocultar el formulario
+        this.fetchCoches(); 
+        this.mostrarFormulario2 = false;
       } else {
         console.error('Error al confirmar el alquiler.');
       }
@@ -224,29 +219,25 @@ export class AppComponent implements OnInit {
 
     if (!fechaFinalString) {
       alert('Por favor, complete todos los campos requeridos.');
-      return; // Detener la ejecución si los campos requeridos no están llenos
+      return;
   }
 
     this.editedCoche.alquiler = null;
     const fechaFinal = new Date(fechaFinalString);
-    const cocheId = this.editedCoche.id; // Obtener el ID del coche
+    const cocheId = this.editedCoche.id; 
 
-    // Lógica para confirmar la devolución del vehículo
-    // Aquí debes enviar los datos a tu backend para actualizar la reserva
-
-    // Por ejemplo:
     fetch(`http://localhost:3000/coches/${cocheId}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(this.editedCoche) // Establecer alquiler a null y enviar la fecha final
+      body: JSON.stringify(this.editedCoche) 
     })
       .then(response => {
         if (response.ok) {
           console.log('¡Devolución confirmada correctamente!');
-          this.calcularPrecio(cocheId, fechaFinal); // Calcular el monto adeudado
-          this.fetchCoches(); // Volver a cargar la lista de coches después de confirmar la devolución
+          this.calcularPrecio(cocheId, fechaFinal); 
+          this.fetchCoches(); 
           this.mostrarFormulario3 = false; // Ocultar el formulario
         } else {
           console.error('Error al confirmar la devolución.');
@@ -262,22 +253,20 @@ export class AppComponent implements OnInit {
     if (coche && coche.alquiler && coche.alquiler.fechaInicio) {
       const fechaInicio = new Date(coche.alquiler.fechaInicio);
       const diasAlquilados = Math.ceil((fechaFinal.getTime() - fechaInicio.getTime()) / (1000 * 60 * 60 * 24)); // Calcular la diferencia en días
-      const montoTotal = diasAlquilados * coche.precio_diario; // Calcular el monto total adeudado
+      const montoTotal = diasAlquilados * coche.precio_diario; 
       alert(`El cliente ${coche.alquiler.clienteNombre} tiene un monto a pagar de: ${montoTotal}€`);
-      // Aquí podrías mostrar el monto total en la interfaz de usuario o realizar cualquier otra acción necesaria
     } else {
       console.error('No se pudo calcular el monto de devolución porque los datos del alquiler no están completos.');
     }
   }
 
   insertarCoche() {
-    // Verificar si todos los campos requeridos están llenos
     if (!this.nuevoCoche.marca || !this.nuevoCoche.modelo || !this.nuevoCoche.año || !this.nuevoCoche.color || !this.nuevoCoche.matricula || !this.nuevoCoche.precio_diario || !this.nuevoCoche.imagen || !this.nuevoCoche.precio_diario || !this.nuevoCoche.kilometraje) {
       alert('Por favor, introduzca todos los campos requeridos.');
-      return; // Evitar insertar el coche si algún campo requerido está vacío
+      return;
     }
   
-    // Llenar el objeto nuevoCoche con los valores de los campos del formulario
+  
     this.nuevoCoche.marca = (<HTMLInputElement>document.getElementById('marca')).value;
     this.nuevoCoche.modelo = (<HTMLInputElement>document.getElementById('modelo')).value;
     this.nuevoCoche.año = (<HTMLInputElement>document.getElementById('año')).value;
@@ -288,8 +277,6 @@ export class AppComponent implements OnInit {
     this.nuevoCoche.nota = (<HTMLInputElement>document.getElementById('nota')).value;
     this.nuevoCoche.kilometraje = (<HTMLInputElement>document.getElementById('kilometraje')).value;
   
-    // Lógica para confirmar el alquiler del vehículo
-    // Aquí debes enviar los datos a tu backend para actualizar el coche
     fetch(`http://localhost:3000/coches`, {
       method: 'POST',
       headers: {
@@ -300,9 +287,8 @@ export class AppComponent implements OnInit {
     .then(response => {
       if (response.ok) {
         console.log('Coche introducido correctamente!');
-        this.mostrarFormulario4 = false; // Ocultar el formulario
-        this.fetchCoches(); // Volver a cargar la lista de coches después de confirmar el alquiler
-        // Vaciar los campos del formulario
+        this.mostrarFormulario4 = false;
+        this.fetchCoches();
         this.nuevoCoche = {
           marca: '',
           modelo: '',
@@ -331,10 +317,10 @@ export class AppComponent implements OnInit {
     
     if (!this.editedCoche.marca || !this.editedCoche.modelo || !this.editedCoche.año) {
       alert('Por favor, complete todos los campos requeridos.');
-      return; // Detener la ejecución si los campos requeridos no están llenos
+      return; 
   }
 
-  const cocheId = this.editedCoche.id; // Obtener el ID del coche
+  const cocheId = this.editedCoche.id; 
 
     fetch(`http://localhost:3000/coches/${cocheId}`, {
       method: 'PUT',
@@ -367,7 +353,7 @@ export class AppComponent implements OnInit {
         .then(response => {
           if (response.ok) {
             console.log('¡Coche eliminado correctamente!');
-            this.fetchCoches(); // Volver a cargar la lista de coches después de eliminar
+            this.fetchCoches(); 
           } else {
             console.error('Error al eliminar el coche.');
           }
