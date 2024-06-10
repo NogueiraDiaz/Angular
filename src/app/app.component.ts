@@ -169,21 +169,21 @@ export class AppComponent implements OnInit {
   obtenerFechaHoy(): string {
     const today = new Date();
     const dd = String(today.getDate()).padStart(2, '0');
-    const mm = String(today.getMonth() + 1).padStart(2, '0'); 
+    const mm = String(today.getMonth() + 1).padStart(2, '0');
     const yyyy = today.getFullYear();
     return `${yyyy}-${mm}-${dd}`;
   }
 
   alquilarCoche() {
-    
-    
+
+
     const nombreCliente = (<HTMLInputElement>document.getElementById('nombre')).value;
     const fechaInicio = (<HTMLInputElement>document.getElementById('fecha')).value;
 
     if (!nombreCliente || !fechaInicio) {
       alert('Por favor, complete todos los campos requeridos.');
       return;
-  }
+    }
 
     const cocheId = this.editedCoche.id;
     this.editedCoche.alquiler = {
@@ -198,46 +198,46 @@ export class AppComponent implements OnInit {
       },
       body: JSON.stringify(this.editedCoche)
     })
-    .then(response => {
-      if (response.ok) {
-        console.log('Alquiler confirmado correctamente!');
-        this.fetchCoches(); 
-        this.mostrarFormulario2 = false;
-      } else {
-        console.error('Error al confirmar el alquiler.');
-      }
-    })
-    .catch(error => {
-      console.error('Error al confirmar el alquiler:', error);
-    });
+      .then(response => {
+        if (response.ok) {
+          console.log('Alquiler confirmado correctamente!');
+          this.fetchCoches();
+          this.mostrarFormulario2 = false;
+        } else {
+          console.error('Error al confirmar el alquiler.');
+        }
+      })
+      .catch(error => {
+        console.error('Error al confirmar el alquiler:', error);
+      });
   }
-  
+
 
   confirmarDevolucion() {
-    
+
     const fechaFinalString = (<HTMLInputElement>document.getElementById('fechaFinal')).value;
 
     if (!fechaFinalString) {
       alert('Por favor, complete todos los campos requeridos.');
       return;
-  }
+    }
 
     this.editedCoche.alquiler = null;
     const fechaFinal = new Date(fechaFinalString);
-    const cocheId = this.editedCoche.id; 
+    const cocheId = this.editedCoche.id;
 
     fetch(`http://localhost:3000/coches/${cocheId}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(this.editedCoche) 
+      body: JSON.stringify(this.editedCoche)
     })
       .then(response => {
         if (response.ok) {
           console.log('¡Devolución confirmada correctamente!');
-          this.calcularPrecio(cocheId, fechaFinal); 
-          this.fetchCoches(); 
+          this.calcularPrecio(cocheId, fechaFinal);
+          this.fetchCoches();
           this.mostrarFormulario3 = false; // Ocultar el formulario
         } else {
           console.error('Error al confirmar la devolución.');
@@ -253,7 +253,7 @@ export class AppComponent implements OnInit {
     if (coche && coche.alquiler && coche.alquiler.fechaInicio) {
       const fechaInicio = new Date(coche.alquiler.fechaInicio);
       const diasAlquilados = Math.ceil((fechaFinal.getTime() - fechaInicio.getTime()) / (1000 * 60 * 60 * 24)); // Calcular la diferencia en días
-      const montoTotal = diasAlquilados * coche.precio_diario; 
+      const montoTotal = diasAlquilados * coche.precio_diario;
       alert(`El cliente ${coche.alquiler.clienteNombre} tiene un monto a pagar de: ${montoTotal}€`);
     } else {
       console.error('No se pudo calcular el monto de devolución porque los datos del alquiler no están completos.');
@@ -265,8 +265,8 @@ export class AppComponent implements OnInit {
       alert('Por favor, introduzca todos los campos requeridos.');
       return;
     }
-  
-  
+
+
     this.nuevoCoche.marca = (<HTMLInputElement>document.getElementById('marca')).value;
     this.nuevoCoche.modelo = (<HTMLInputElement>document.getElementById('modelo')).value;
     this.nuevoCoche.año = (<HTMLInputElement>document.getElementById('año')).value;
@@ -276,7 +276,7 @@ export class AppComponent implements OnInit {
     this.nuevoCoche.imagen = (<HTMLInputElement>document.getElementById('imagen')).value;
     this.nuevoCoche.nota = (<HTMLInputElement>document.getElementById('nota')).value;
     this.nuevoCoche.kilometraje = (<HTMLInputElement>document.getElementById('kilometraje')).value;
-  
+
     fetch(`http://localhost:3000/coches`, {
       method: 'POST',
       headers: {
@@ -284,43 +284,43 @@ export class AppComponent implements OnInit {
       },
       body: JSON.stringify(this.nuevoCoche)
     })
-    .then(response => {
-      if (response.ok) {
-        console.log('Coche introducido correctamente!');
-        this.mostrarFormulario4 = false;
-        this.fetchCoches();
-        this.nuevoCoche = {
-          marca: '',
-          modelo: '',
-          año: null,
-          color: '',
-          matricula: '',
-          precio_diario: null,
-          alquiler: null,
-          imagen: '',
-          nota: '',
-          kilometraje: null
-        };
-      } else {
-        console.error('Error al introducir el vehículo.');
-      }
-    })
-    .catch(error => {
-      console.error('Error al introducir el vehículo: ', error);
-    });
+      .then(response => {
+        if (response.ok) {
+          console.log('Coche introducido correctamente!');
+          this.mostrarFormulario4 = false;
+          this.fetchCoches();
+          this.nuevoCoche = {
+            marca: '',
+            modelo: '',
+            año: null,
+            color: '',
+            matricula: '',
+            precio_diario: null,
+            alquiler: null,
+            imagen: '',
+            nota: '',
+            kilometraje: null
+          };
+        } else {
+          console.error('Error al introducir el vehículo.');
+        }
+      })
+      .catch(error => {
+        console.error('Error al introducir el vehículo: ', error);
+      });
   }
 
   editarCoche() {
     this.editedCoche.marca = (<HTMLInputElement>document.getElementById('marca')).value;
     this.editedCoche.modelo = (<HTMLInputElement>document.getElementById('modelo')).value;
     this.editedCoche.año = (<HTMLInputElement>document.getElementById('año')).value;
-    
+
     if (!this.editedCoche.marca || !this.editedCoche.modelo || !this.editedCoche.año) {
       alert('Por favor, complete todos los campos requeridos.');
-      return; 
-  }
+      return;
+    }
 
-  const cocheId = this.editedCoche.id; 
+    const cocheId = this.editedCoche.id;
 
     fetch(`http://localhost:3000/coches/${cocheId}`, {
       method: 'PUT',
@@ -353,7 +353,7 @@ export class AppComponent implements OnInit {
         .then(response => {
           if (response.ok) {
             console.log('¡Coche eliminado correctamente!');
-            this.fetchCoches(); 
+            this.fetchCoches();
           } else {
             console.error('Error al eliminar el coche.');
           }
