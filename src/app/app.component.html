@@ -73,20 +73,45 @@
         <h2 class="pt-2">Editar Vehiculo</h2>
         <div class="mb-3">
           <label for="marca" class="form-label">Marca:</label>
-          <input type="text" id="marca" name="marca" class="form-control" required>
+          <input type="text" id="marca" name="marca" class="form-control" [(ngModel)]="editedCoche.marca" required>
         </div>
         <div class="mb-3">
           <label for="modelo" class="form-label">Modelo:</label>
-          <input type="text" id="modelo" name="modelo" class="form-control" required>
+          <input type="text" id="modelo" name="modelo" class="form-control" [(ngModel)]="editedCoche.modelo" required>
         </div>
         <div class="mb-3">
           <label for="año" class="form-label">Año:</label>
-          <input type="year" id="año" name="año" class="form-control" required>
+          <input type="number" id="año" name="año" class="form-control" [(ngModel)]="editedCoche['año']" required>
+        </div>
+        <div class="mb-3">
+          <label for="color" class="form-label">Color:</label>
+          <input type="text" id="color" name="color" class="form-control" [(ngModel)]="editedCoche.color" required>
+        </div>
+        <div class="mb-3">
+          <label for="matricula" class="form-label">Matrícula:</label>
+          <input type="text" id="matricula" name="matricula" class="form-control" [(ngModel)]="editedCoche.matricula" required>
+        </div>
+        <div class="mb-3">
+          <label for="precio_diario" class="form-label">Precio Diario:</label>
+          <input type="number" id="precio_diario" name="precio_diario" class="form-control" [(ngModel)]="editedCoche.precio_diario" required>
+        </div>
+        <div class="mb-3">
+          <label for="imagen" class="form-label">Imagen:</label>
+          <input type="text" id="imagen" name="imagen" class="form-control" [(ngModel)]="editedCoche.imagen" required>
+        </div>
+        <div class="mb-3">
+          <label for="nota" class="form-label">Nota:</label>
+          <input type="text" id="nota" name="nota" class="form-control" [(ngModel)]="editedCoche.nota" required>
+        </div>
+        <div class="mb-3">
+          <label for="kilometraje" class="form-label">Kilometraje:</label>
+          <input type="number" id="kilometraje" name="kilometraje" class="form-control" [(ngModel)]="editedCoche.kilometraje" required>
         </div>
         <button class="btn btn-primary mb-3" (click)="editarCoche()">Guardar Cambios</button>
         <a href="#" class="text-secondary text-decoration-none mx-3" (click)="openEditForm(null)">Ocultar</a>
       </div>
     </div>
+
 
     <div id="reservaForm" *ngIf="mostrarFormulario2">
       <div class="container bg-body-secondary my-4 rounded">

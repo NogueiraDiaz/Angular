@@ -2,19 +2,19 @@
   "coches": [
     {
       "id": "2",
-      "marca": "Golfero",
-      "modelo": "Loko",
-      "año": "2121",
-      "color": "Verde",
-      "matricula": "8788WXP",
-      "precio_diario": 85,
+      "marca": "Ultimo",
+      "modelo": "Ultimo",
+      "año": "2030",
+      "color": "Negro",
+      "matricula": "4r453534",
+      "precio_diario": "999",
       "alquiler": {
         "clienteNombre": "Isabel González Fernández",
         "fechaInicio": "2024-02-03"
       },
-      "imagen": "pexels-luca-istrate-15469368.jpg",
-      "nota": "Algunos rasguños",
-      "kilometraje": 60746
+      "imagen": "pexels-adrian-dorobantu-2127733.jpg",
+      "nota": "Muy Guapo",
+      "kilometraje": "0"
     },
     {
       "id": "4",

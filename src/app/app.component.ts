@@ -314,9 +314,17 @@ export class AppComponent implements OnInit {
     this.editedCoche.marca = (<HTMLInputElement>document.getElementById('marca')).value;
     this.editedCoche.modelo = (<HTMLInputElement>document.getElementById('modelo')).value;
     this.editedCoche.año = (<HTMLInputElement>document.getElementById('año')).value;
+    this.editedCoche.color = (<HTMLInputElement>document.getElementById('color')).value;
+    this.editedCoche.matricula = (<HTMLInputElement>document.getElementById('matricula')).value;
+    this.editedCoche.precio_diario = (<HTMLInputElement>document.getElementById('precio_diario')).value;
+    this.editedCoche.imagen = (<HTMLInputElement>document.getElementById('imagen')).value;
+    this.editedCoche.nota = (<HTMLInputElement>document.getElementById('nota')).value;
+    this.editedCoche.kilometraje = (<HTMLInputElement>document.getElementById('kilometraje')).value;
 
-    if (!this.editedCoche.marca || !this.editedCoche.modelo || !this.editedCoche.año) {
-      alert('Por favor, complete todos los campos requeridos.');
+    
+
+    if (!this.editedCoche.marca || !this.editedCoche.modelo || !this.editedCoche.año || !this.editedCoche.color || !this.editedCoche.matricula || !this.editedCoche.precio_diario || !this.editedCoche.imagen || !this.editedCoche.precio_diario || !this.editedCoche.kilometraje) {
+      alert('Por favor, introduzca todos los campos requeridos.');
       return;
     }
 
